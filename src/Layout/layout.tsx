@@ -222,8 +222,11 @@ const Layout = () => {
   return (
     <div
       className="layout relative mx-auto flex justify-center items-center flex-col py-4 w-full bg-cover
-      bg-gradient-to-r from-blue-100 to-cyan-300
+     bg-gradient-to-r from-neutral-300 to-teal-200
       "
+      // bg-gradient-to-r from-neutral-300 to-stone-400
+      // bg-gradient-to-r from-rose-100 to-teal-100
+      // bg-gradient-to-r from-blue-100 to-cyan-300
       // bg-gradient-to-r
       // from-yellow-200
       // to-orange-300

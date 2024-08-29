@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function WhyChooseUs() {
   return (
-    <Container data-aos="fade-up">
+    <Container>
       <Glass className="flex gap-2 px-10 py-10">
         <div className="flex-1 flex flex-col gap-2">
           <div className="relative w-max">
@@ -39,19 +39,19 @@ export default function WhyChooseUs() {
         </div>
         <div className="flex-1 flex flex-col gap-3 justify-center items-center">
           <ul className="flex gap-6 flex-wrap justify-center cursor-pointer">
-            <li className="text-center flex gap-1 justify-center bg-secondary bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 rounded-2xl font-primary tracking-widest px-8 py-2 w-[200px]  flex-col items-center text-white/90">
+            <li className="text-center flex gap-1 justify-center bg-sky-400 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-90 rounded-2xl font-primary tracking-widest px-8  w-[200px]  flex-col items-center text-white/90 py-3">
               <Icon icon={"iconamoon:profile-light"} className="text-4xl" />
               Professional consulting team
             </li>
-            <li className="text-center flex gap-1 justify-center bg-secondary bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 rounded-2xl font-primary tracking-widest px-8 py-2 w-[200px]  flex-col items-center text-white/90">
+            <li className="text-center flex gap-1 justify-center bg-yellow-400 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-90 rounded-2xl font-primary tracking-widest px-8 py-3 w-[200px]  flex-col items-center text-black/90">
               <Icon icon={"hugeicons:absolute"} className="text-4xl" />
               Personalized solutions
             </li>
-            <li className="text-center flex gap-1 justify-center bg-secondary bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 rounded-2xl font-primary tracking-widest px-8 py-2 w-[200px]  flex-col items-center text-white/90">
+            <li className="text-center flex gap-1 justify-center bg-highlight bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-90 rounded-2xl font-primary tracking-widest px-8 py-3 w-[200px]  flex-col items-center text-white/90">
               <Icon icon={"solar:hand-money-linear"} className="text-4xl" />
               Affordable cost
             </li>
-            <li className="text-center flex gap-1 justify-center bg-secondary bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-30 rounded-2xl font-primary tracking-widest px-8 py-2 w-[200px]  flex-col items-center text-white/90">
+            <li className="text-center flex gap-1 justify-center bg-green-400 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-90 rounded-2xl font-primary tracking-widest px-8 py-3 w-[200px]  flex-col items-center text-white/90">
               <Icon icon={"ph:chalkboard-teacher-bold"} className="text-4xl" />
               10+ years experience
             </li>

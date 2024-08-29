@@ -21,11 +21,14 @@ export const NewsFeedCard = ({
   description?: string;
 }) => {
   return (
-    <div className="" data-aos="fade-left">
+    <div className="">
       {image && (
         <div className="flex flex-col gap-10 rounded-xl hover:shadow-xl transition-all duration-150 ease-in-out border border-slate-400 cursor-pointer">
           <div className="relative ">
-            <img src="/aaa.jpg" className="object-cover w-full rounded-t-xl" />
+            <img
+              src={image}
+              className="object-cover w-full h-52 rounded-t-xl"
+            />
             <span className="bg-red-600 text-slate-50 h-14 w-14 flex flex-col justify-center items-center rounded-full text-wrap absolute right-4 top-4 text-sm font-bold">
               <span>14</span>
               <span className="">AUG</span>
@@ -45,16 +48,16 @@ export const NewsFeedCard = ({
               <div className="flex gap-1 ">
                 <Icon
                   icon={"carbon:time"}
-                  className="text-center text-white/60 mt-0.5"
+                  className="text-center text-black/60 mt-0.5"
                 />
-                <span className="text-white/60">6 mins ago</span>
+                <span className="text-black/60">6 mins ago</span>
               </div>
               <div className="flex gap-1">
                 <Icon
                   icon={"carbon:chat"}
-                  className="text-center text-white/60 mt-0.5"
+                  className="text-center text-black/60 mt-0.5"
                 />
-                <span className="text-white/60"> 39 comments</span>
+                <span className="text-black/60"> 39 comments</span>
               </div>
             </div>
             <div className="pb-6">

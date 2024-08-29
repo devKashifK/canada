@@ -14,9 +14,14 @@ import {
 import { cn } from "@/lib/utils";
 import { Item } from "@radix-ui/react-navigation-menu";
 
-export default function Navbar({ defaultStyle = false }) {
+export default function Navbar({ defaultStyle = false, type = "default" }) {
   return (
-    <div className="rounded-t-2xl shadow-lg h-24 flex justify-start items-center bg-black/40">
+    <div
+      className={cn(
+        "rounded-t-2xl shadow-lg h-24 flex justify-start items-cente",
+        type === "hero" ? "bg-gray-100=" : "bg-black/40"
+      )}
+    >
       <div className="h-full flex justify-center items-center px-8">
         <img src="/gt-removebg.png" alt="" className="" />
       </div>
@@ -69,6 +74,20 @@ export default function Navbar({ defaultStyle = false }) {
             </span>
             <div className="group-hover:border-b-slate-900 w-full border border-transparent ease-out duration-150"></div>
           </Link>
+          <a
+            href="https://api.whatsapp.com/send?phone=16476197975"
+            target="_blank"
+            className="text-xs bg-green-500 text-white px-3 rounded-sm justify-center items-center py-1 flex  gap-2 group w-max -mr-6"
+          >
+            {/* <span
+              className={cn(
+                "group-hover:text-slate-900 duration-150 ease-out flex gap-1 justify-center items-center",
+                defaultStyle && "text-white/60"
+              )}
+            > */}
+            <Icon icon={"mdi:whatsapp"} className="text-xl" />
+            {/* </span> */}
+          </a>
           <Button
             className="py-0.5"
             icon={

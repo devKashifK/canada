@@ -9,7 +9,7 @@ import Glass from "@/lib/helpers";
 
 export default function CTA() {
   return (
-    <Container data-aos="fade-up">
+    <Container>
       <Title
         title={
           <p className="text-5xl text-black/50 w-full text-left">
@@ -47,7 +47,7 @@ export default function CTA() {
         </div>
 
         <div className="flex-1 items-center flex justify-end">
-          <CtaCard item={CtaDetails[4]} />
+          <CtaCard item={CtaDetails[5]} />
         </div>
       </div>
     </Container>
@@ -56,10 +56,7 @@ export default function CTA() {
 
 export const CtaCard = ({ item }) => {
   return (
-    <div
-      data-aos="fade-left"
-      className="rounded-2xl bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 h-max shadow-2xl w-[320px] justify-start items-center"
-    >
+    <div className="rounded-2xl bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 h-max shadow-2xl w-[320px] justify-start items-center">
       <div className="">
         <img src={item.image} alt="" className="rounded-t-2xl" />
       </div>
@@ -90,7 +87,6 @@ export const CtaCard = ({ item }) => {
 export const CtaCard2 = ({ item, flip }) => {
   return (
     <div
-      data-aos="fade-right"
       className={cn(
         "w-[520px] h-[220px] flex items-center relative ",
         flip ? "justify-end" : "justify-start"
@@ -147,7 +143,7 @@ export function truncateTextHeading(text) {
 const CtaDetails = [
   {
     id: 1,
-    image: "/aaa.jpg",
+    image: "/immigrate.jpg",
     title: "Immigrate",
     subtitle:
       "Exploring Canada for immigration is an exciting and life-altering choice.",
@@ -158,7 +154,7 @@ const CtaDetails = [
   },
   {
     id: 2,
-    image: "/aaa.jpg",
+    image: "/work.jpg",
     title: "Work",
     subtitle:
       "Working in Canada offers a wide array of opportunities for skilled workers from around the world.",
@@ -170,7 +166,7 @@ const CtaDetails = [
   {
     id: 3,
     title: "Business",
-    image: "/aaa.jpg",
+    image: "/business.jpg",
     subtitle:
       "Invest and build your business while ensuring Canadian permanent residency for your family. ",
     labels: ["Quebec Investor", "Start Up Visa"],
@@ -181,7 +177,7 @@ const CtaDetails = [
   {
     id: 4,
     title: "Study",
-    image: "/aaa.jpg",
+    image: "/study.jpg",
     subtitle:
       "Studying in Canada offers a world-class education, diverse cultural experiences, and excellent opportunities for personal and professional growth.",
     labels: ["High Quality Education", "Diverse Campuses and Programs"],
@@ -193,7 +189,7 @@ const CtaDetails = [
   {
     id: 5,
     title: "Family Sponsor",
-    image: "/aaa.jpg",
+    image: "/family.jpg",
     subtitle:
       "The program allows eligible individuals to sponsor their close family members for permanent residency in Canada.",
     labels: ["Sponsoring a spouse or partner", "Sponsoring dependent children"],
@@ -204,7 +200,7 @@ const CtaDetails = [
 
   {
     id: 6,
-    image: "/aaa.jpg",
+    image: "/doubt.jpg",
     title: "Not Sure",
     subtitle:
       "Feeling uncertain about your immigration journey? Our experienced team of GreenTech Resource Worldwide Canada is here to provide expert guidance and support you!",

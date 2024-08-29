@@ -79,7 +79,10 @@ export default function About() {
           //   list={item.list}
           //   flip={false}
           // />
-          <CardDemo>
+          <MovingCardBorder
+            animate
+            color="w-[550px] bg-gray-100 bg-opacity-20 backdrop-blur-md h-[500px] flex-wrap"
+          >
             <div className="flex flex-col gap-0 w-full px-6 relative z-10">
               <h5 className="text-4xl text-left text-highlight">
                 {item.title}
@@ -100,7 +103,7 @@ export default function About() {
                 </li>
               ))}
             </div>
-          </CardDemo>
+          </MovingCardBorder>
         ))}
       </Container>
 
@@ -268,10 +271,11 @@ export default function About() {
             </div>
             <div className="flex flex-col justify-center items-center w-full gap-4">
               <MovingCardBorder
+                color="bg-sky-400/80"
                 className="justify-start items-center  flex flex-col gap-2 py-8 w-full rounded-2xl text-left bg-center bg-cover cursor-pointer"
                 animate={true}
               >
-                <div className="relative z-10 text-white/60 flex flex-col gap-4">
+                <div className="relative z-10 text-white flex flex-col gap-4">
                   <h4 className="tracking-widest text-3xl">
                     Government of Canada Licensed
                   </h4>
@@ -291,8 +295,9 @@ export default function About() {
             <MovingCardBorder
               className="justify-start items-center  flex flex-col gap-2 py-8 w-full flex-1 rounded-2xl text-left bg-center bg-cover cursor-pointer"
               animate={true}
+              color="bg-highlight/80"
             >
-              <div className="relative z-10 text-black/60 flex flex-col gap-4">
+              <div className="relative z-10 text-white flex flex-col gap-4">
                 <h4 className="tracking-widest text-3xl">High Success Rate</h4>
                 <p className="text-sm">
                   This is achieved through a personalized strategy for each of
@@ -306,8 +311,9 @@ export default function About() {
             <MovingCardBorder
               className="justify-start items-center  flex flex-col gap-2 py-8 w-full flex-1 rounded-2xl text-left bg-center bg-cover cursor-pointer"
               animate={true}
+              color="bg-yellow-400/80"
             >
-              <div className="relative z-10 text-black/60 flex flex-col gap-4">
+              <div className="relative z-10 text-white flex flex-col gap-4">
                 <h4 className="tracking-widest text-3xl">
                   Years Of Experience
                 </h4>
@@ -322,10 +328,11 @@ export default function About() {
             </MovingCardBorder>
 
             <MovingCardBorder
+              color="bg-green-400/80 text-white"
               className="justify-start items-center flex flex-col gap-2 py-8 w-full rounded-2xl flex-1 text-left bg-center bg-cover cursor-pointer"
               animate={true}
             >
-              <div className="relative z-10 text-black/60 flex flex-col gap-4">
+              <div className="relative z-10 text-white flex flex-col gap-4">
                 <h4 className="tracking-widest text-3xl">
                   Reasonable cost guaranteed quality
                 </h4>
@@ -340,13 +347,6 @@ export default function About() {
           </div>
         </Glass>
       </Container>
-      <HoverCard
-        color="bg-sky-400"
-        icon="material-symbols-light--keyboard-double-arrow-right"
-        title="Not Sure"
-        cta="Learn More"
-        description="Feeling uncertain"
-      />
     </div>
   );
 }

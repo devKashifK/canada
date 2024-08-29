@@ -1,23 +1,68 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./navbar";
-import { Button } from "./custom";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Button } from "./custom";
 
 export default function Hero() {
+  const images = ["/aaa.jpg", "/hero-2.jpg", "/hero-3.jpg"];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [nextImageIndex, setNextImageIndex] = useState(1);
+  const [slide, setSlide] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlide(false);
+
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setNextImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setSlide(true);
+      }, 500); // Slide animation duration
+    }, 5000); // Duration between image changes
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="flex flex-col gap-2 w-full">
-      <div className="w-full bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 h-[500px] shadow-2xl rounded-2xl mx-auto flex justify-start items-start flex-col overflow-visible">
-        <Navbar />
-        <div className="flex w-full h-full">
-          <div className="px-20 py-10 flex-1 flex gap-8 flex-col">
-            <div className="flex gap-1 flex-col relative ">
+      <div className="w-[97%] mx-auto h-[500px] shadow-2xl rounded-2xl flex justify-start items-start flex-col overflow-hidden relative">
+        {/* Current Image */}
+        <div
+          className={`absolute top-0 left-0 w-full h-full transition-transform duration-500 ease-in-out ${
+            slide ? "translate-x-0" : "-translate-x-full"
+          }`}
+          style={{
+            backgroundImage: `url(${images[currentImageIndex]})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
+
+        {/* Next Image */}
+        <div
+          className={`absolute top-0 left-full w-full h-full transition-transform duration-500 ease-in-out ${
+            slide ? "-translate-x-full" : "translate-x-0"
+          }`}
+          style={{
+            backgroundImage: `url(${images[nextImageIndex]})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
+
+        <div className="absolute top-0 left-0 w-full h-full bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 rounded-xl"></div>
+
+        <div className="flex flex-col w-full h-full relative z-10">
+          <Navbar type={"hero"} />
+          <div className="px-20 py-10 flex-1 flex gap-8 flex-col justify-center items-center">
+            <div className="flex gap-1 flex-col justify-center items-center w-full relative">
               <p className="text-4xl text-left text-black/50">
-                Achieve your family Canada <br />
-                <strong className="text-black/70"> dreams with us</strong>
+                Achieve your family Canada
+                <strong className="text-black/70 ml-4">dreams with us</strong>
                 <br />
               </p>
 
-              <div className="absolute left-0 -bottom-8 w-64 h-10">
+              <div className="absolute right-40 -bottom-8 w-64 h-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="100%"
@@ -35,7 +80,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="text-left">
+            <p className="text-center w-full">
               We support companies in their digital transformation by <br />
               creating internal tools and providing software <br /> development
               consulting.
@@ -58,31 +103,8 @@ export default function Hero() {
               </span>
             </Button>
           </div>
-          <div className="flex-1 h-full justify-center flex items-center">
-            <div className="w-44 h-48 rounded-xl">
-              <img
-                src="/aaa.jpg"
-                alt=""
-                className="w-full rounded-xl h-full object-cover"
-              />
-            </div>
-            <div className="rounded-2xl"></div>
-          </div>
         </div>
       </div>
-
-      {/* <div className="absolute bottom-28 backdrop-blur-md border-4 border-white right-6 w-[400px] h-[200px] rounded-2xl bg-white/80 shadow-2xl">
-        {" "}
-        asjkdhkhas
-      </div> */}
-
-      {/* <div className="rounded-2xl w-full h-[200px]  bg-white after:bg-green after:w-10 after:h-10 ">
-        <div className="py-6  flex gap-4">
-          <div className="rounded-md w-[100px] h-[50px]">ggwe</div>
-          <div className="rounded-md w-[100px] h-[50px]">ds</div>
-          <div className="rounded-md w-[100px] h-[50px]">eafc</div>
-        </div>
-      </div> */}
     </div>
   );
 }

@@ -2,27 +2,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "./App.css";
 import Container from "./components/ui/container";
 import CTA, { CTADefault } from "./components/ui/cta";
-import { Button } from "./components/ui/custom";
 import Jobs from "./components/ui/jobs";
 import { NewsFeedCard } from "./components/ui/newsCard";
 import { InfiniteMovingCardsDemo } from "./components/ui/testimonial";
 import Title from "./components/ui/Title";
 import WhyChooseUs from "./components/ui/why-choose-us";
 import { Autoplay } from "swiper/modules";
-import { useEffect } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
 
 function App() {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init();
+  //   AOS.refresh();
+  // }, []);
   return (
     <div className="py-10 flex flex-col gap-12">
       <CTA />
       <WhyChooseUs />
-      <Container className="flex gap-10" data-aos="fade-up">
+      <Container className="flex gap-10">
         <Title
           cta="All News & Events"
           subtitle="Canada Immigration News"
@@ -41,7 +38,7 @@ function App() {
           modules={[Autoplay]}
         >
           {dummyNews.map((item, index) => (
-            <SwiperSlide key={index} data-aos="fade-left">
+            <SwiperSlide key={index}>
               <NewsFeedCard
                 title={item.title}
                 subTitle={item.subTitle}
@@ -79,7 +76,7 @@ export default App;
 export const dummyNews = [
   {
     id: 1,
-    image: "https://example.com/news1.jpg",
+    image: "/news-1.jpg",
     date: "2023-11-28",
     title: "India Launches Chandrayaan-3 Mission",
     subTitle: "A Giant Leap for India",
@@ -89,7 +86,7 @@ export const dummyNews = [
   },
   {
     id: 2,
-    image: "https://example.com/news2.jpg",
+    image: "/news-2.jpg",
     date: "2024-03-15",
     title: "Artificial Intelligence Breakthrough",
     subTitle: "New Era of Technology",
@@ -99,7 +96,7 @@ export const dummyNews = [
   },
   {
     id: 3,
-    image: "https://example.com/news3.jpg",
+    image: "/news-3.jpg",
     date: "2024-05-08",
     title: "Climate Change Summit",
     subTitle: "Global Leaders Unite",
@@ -109,7 +106,7 @@ export const dummyNews = [
   },
   {
     id: 4,
-    image: "https://example.com/news4.jpg",
+    image: "/news-4.jpg",
     date: "2024-06-22",
     title: "Economic Recession Fears",
     subTitle: "Global Markets in Turmoil",
@@ -119,7 +116,7 @@ export const dummyNews = [
   },
   {
     id: 5,
-    image: "https://example.com/news5.jpg",
+    image: "/news-5.webp",
     date: "2024-07-12",
     title: "New Electric Car Model",
     subTitle: "Revolutionizing Transportation",
@@ -129,52 +126,12 @@ export const dummyNews = [
   },
   {
     id: 6,
-    image: "https://example.com/news6.jpg",
+    image: "/news-6.jpg",
     date: "2024-08-01",
     title: "Space Tourism Takes Off",
     subTitle: "Commercial Flights to Space",
     description:
       "The first commercial space tourism flights are announced, marking a new era of space exploration.",
     comments: "Space tourism is the next big thing!",
-  },
-  {
-    id: 7,
-    image: "https://example.com/news7.jpg",
-    date: "2023-12-15",
-    title: "Healthcare Breakthrough",
-    subTitle: "New Cancer Treatment Discovered",
-    description:
-      "Scientists develop a promising new treatment for a previously incurable form of cancer.",
-    comments: "This is a major step forward in cancer research.",
-  },
-  {
-    id: 8,
-    image: "https://example.com/news8.jpg",
-    date: "2024-02-28",
-    title: "Cybersecurity Attack",
-    subTitle: "Major Data Breach",
-    description:
-      "A massive cybersecurity attack compromises the data of millions of users, raising concerns about online privacy.",
-    comments: "We need to strengthen cybersecurity measures.",
-  },
-  {
-    id: 9,
-    image: "https://example.com/news9.jpg",
-    date: "2024-04-18",
-    title: "Global Food Crisis",
-    subTitle: "Rising Food Prices",
-    description:
-      "The world faces a growing food crisis as supply chain disruptions and climate change impact agricultural production.",
-    comments: "We need to find sustainable solutions to food security.",
-  },
-  {
-    id: 10,
-    image: "https://example.com/news10.jpg",
-    date: "2024-07-05",
-    title: "Renewable Energy Expansion",
-    subTitle: "Transition to Clean Energy",
-    description:
-      "Countries around the world accelerate their investments in renewable energy sources to combat climate change.",
-    comments: "The shift to clean energy is essential for our future.",
   },
 ];

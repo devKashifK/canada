@@ -4,8 +4,8 @@ import { Button } from "./custom";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col w-full rounded-2xl shadow-2xl">
-      <div className="bg-secondary bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-[500px] flex gap-10 px-12 py-16 items-center justify-center text-white">
+    <div className="flex flex-col w-[97%] mx-auto rounded-2xl shadow-2xl">
+      <div className="bg-secondary/40 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-[500px] flex gap-10 px-12 py-16 items-center justify-center text-white">
         <div className="flex flex-col gap-10 flex-1 text-white/50 pt-10 font-extralight justify-start items-start">
           <img src="/gt-removebg.png" alt="" className="w-[70%] pl-10" />
 
@@ -32,7 +32,7 @@ export default function Footer() {
               Customer Review
             </span>
           </div>
-          <div className="flex flex-row gap-2 text-xs text-stone-300 pb-12 px-10">
+          <div className="flex flex-row gap-2 text-xs text-white pb-12 px-10">
             <div className="w-[40%] text-left">
               2124 Broad St, Regina, Saskatchewan,Canada S4P 1Y5 (Registered
               office)
@@ -53,7 +53,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-3 flex-1 h-full text-white/50 font-extralight  justify-start items-start px-5">
+        <div className="flex flex-col gap-3 flex-1 h-full text-white font-extralight  justify-start items-start px-5">
           <div className="flex flex-col gap-5">
             <p className="text-sm text-left">Follow us</p>
             <div className="h-10  border-gray-400 flex flex-row">

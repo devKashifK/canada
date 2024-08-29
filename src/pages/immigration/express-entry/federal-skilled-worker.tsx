@@ -86,13 +86,19 @@ export default function FedralSkilledWorker() {
       </Container>
       <CTA />
 
-      <Container className="">
-        <Title
-          subtitle="FAQ"
-          title={"How to apply for a Work Permit"}
-          description="Applying for a work permit in Canada can be a multi-step process, depending on your situation and the type of work permit you require. Here are the general steps to follow"
-        />
-        <FAQ />
+      <Container className="flex flex-row gap-16 py-10 justify-center items-center">
+        <div className="flex-1 relative">
+          <div className="absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-20"></div>
+          <img src="/work.jpg" className="rounded-md" alt="" />
+        </div>
+        <div className="flex-1 flex flex-col gap-4">
+          <Title
+            subtitle="FAQ"
+            title={"How to apply for a Work Permit"}
+            description="Applying for a work permit in Canada can be a multi-step process, depending on your situation and the type of work permit you require. Here are the general steps to follow"
+          />
+          <FAQ />
+        </div>
       </Container>
     </>
   );

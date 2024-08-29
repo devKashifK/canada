@@ -6,6 +6,7 @@ export default function MovingCardBorder({
   children,
   className,
   animate = false,
+  color = "gray",
   ...props
 }: {
   children?: React.ReactNode;
@@ -14,8 +15,10 @@ export default function MovingCardBorder({
 } & React.HTMLProps<HTMLDivElement>) {
   return (
     <div
-      className="card 
-  card-animated card-animated-loop bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md hover:scale-105 bg-opacity-20 rounded-2xl border-gray-100 group px-0 py-0 transition-all duration-300 ease-in-out"
+      className={cn(
+        "card card-animated card-animated-loop hover:scale-105 rounded-2xl border-gray-100 group px-0 py-0 transition-all duration-300 ease-in-out",
+        color
+      )}
       {...props}
     >
       {animate ? (
