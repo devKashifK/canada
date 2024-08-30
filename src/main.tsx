@@ -124,7 +124,6 @@ const router = createBrowserRouter([
       },
       {
         path: "provincial-nominee-programs",
-        element: <ProvincialNomineeProgram />,
         children: [
           {
             path: "alberta-immigration-aaip",

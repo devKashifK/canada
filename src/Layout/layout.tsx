@@ -1,16 +1,12 @@
 import Footer from "@/components/ui/footer";
 import Hero from "@/components/ui/hero";
 import HeroDefault from "@/components/ui/hero-all";
-import Navbar from "@/components/ui/navbar";
-import Contact from "@/pages/contact";
-import React from "react";
-import { Outlet } from "react-router-dom";
-import { text } from "stream/consumers";
+import { Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
-  const location = window.location.pathname;
+  const location = useLocation();
   console.log(location);
-  const pathSegments = location.split("/");
+  const pathSegments = location.pathname.split("/");
   const path = pathSegments[pathSegments.length - 1];
   console.log(path);
 
@@ -235,7 +231,7 @@ const Layout = () => {
       // bg-gradient-to-r from-[#7AB1BA] to-[#777474]
     >
       <div className="flex flex-col w-[100%] relative z-10">
-        {location === "/" ? (
+        {location.pathname === "/" ? (
           <Hero />
         ) : (
           <HeroDefault
@@ -244,7 +240,7 @@ const Layout = () => {
             img={text[path] && text[path].image}
           />
         )}
-        <main className="">
+        <main className="py-8">
           <Outlet />
         </main>
         <Footer />

@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { Item } from "@radix-ui/react-navigation-menu";
+import { motion } from "framer-motion";
 
 export default function Navbar({ defaultStyle = false, type = "default" }) {
   return (
@@ -114,14 +115,21 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                         "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 relative group bg-transparent"
                       )}
                     >
-                      <Link to={navItem.path} unstable_viewTransition>
+                      <Link
+                        className={cn(
+                          type === "default" &&
+                            "text-white group-hover:text-black"
+                        )}
+                        to={navItem.path}
+                        unstable_viewTransition
+                      >
                         {navItem.element}
                       </Link>
                     </NavigationMenuLink>
                   ) : (
                     <NavigationMenuTrigger
                       className={cn(
-                        "bg-transparent",
+                        "bg-transparent data-[state=open]:text-white data-[state=open]:bg-[#b33d3d] py-1 focus:bg-[#b33d3d] hover:bg-[#b33d3d] ",
                         defaultStyle && "text-white/90"
                       )}
                     >
@@ -139,14 +147,14 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <button className="flex gap-1 justify-center items-center w-max px-4 hover:bg-accent hover:text-accent-foreground py-2">
+          {/* <button className="flex gap-1 justify-center items-center w-max px-4 hover:bg-accent hover:text-accent-foreground py-2">
             <Icon icon={"emojione:flag-for-liberia"} />
             EN
           </button>
           <button className="flex gap-1 justify-center items-center w-max px-4 py-2 hover:bg-accent hover:text-accent-foreground">
             <Icon icon={"twemoji:flag-vietnam"} />
             VN
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
@@ -167,7 +175,12 @@ const renderSubmenus = (submenus) => {
         >
           {subPage.children ? (
             <div className="relative w-full">
-              <div className="flex justify-between cursor-pointer items-center text-left text-sm px-2 w-full">
+              <div
+                className={cn(
+                  "flex justify-between cursor-pointer items-center text-left text-sm px-2 w-full rounded-md py-1",
+                  hoveredPath === subPage.path ? "bg-[#b33d3d] text-white" : ""
+                )}
+              >
                 <span>{subPage.path}</span>
                 <Icon icon={"zondicons:cheveron-right"} />
               </div>
@@ -182,11 +195,21 @@ const renderSubmenus = (submenus) => {
                 {subPage.children.map((item) => (
                   <Link
                     key={item.path}
-                    className="text-left cursor-pointer text-sm border-b py-1 last:border-b-0 px-2 w-full"
+                    className="group rounded-md text-left cursor-pointer text-sm border-b py-1 last:border-b-0 px-2 w-full"
                     to={item.path}
                     unstable_viewTransition
                   >
-                    {item.element}
+                    <motion.div
+                      whileHover={{
+                        scale: 1.01,
+                        backgroundColor: "#b33d3d",
+                        color: "#fff",
+                      }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                      className="px-3 py-1 rounded-md"
+                    >
+                      {item.element}
+                    </motion.div>
                   </Link>
                 ))}
               </div>
@@ -254,9 +277,10 @@ const router = [
     children: [
       {
         path: "Express Entry",
+        element: `Express Entry`,
         children: [
           {
-            path: "federal-skilled-worker",
+            path: "/immigration/express-entry/federal-skilled-worker",
             element: "Fedral Skilled Worker",
           },
           {
@@ -274,35 +298,36 @@ const router = [
         children: [
           {
             path: "/immigration/provincial-nominee-programs/alberta-immigration-aaip",
-            element: "Alberta",
+            element: "Alberta (AAIP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/atlantic-immigration-aipp",
-            element: "Atlantic",
+            element: "Atlantic Immigration (AIPP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/british-columbia-bcpnp",
-            element: "BritishColumbia",
+
+            element: "British Colombia (BC PNP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/ontario-oinp",
-            element: "Ontario",
+            element: "Ontario (OINP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/manitoba-mpnp",
-            element: "Manitoba",
+            element: "Manitoba (MPNP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/new-brunswick-nbpnp",
-            element: "New Bruns wick",
+            element: "New Brunswick (NBPNP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/newfoundland-and-labrador",
-            element: "NewFound land Labrador",
+            element: "Newfoundland and Labrador",
           },
           {
             path: "/immigration/provincial-nominee-programs/saskatchewan-sinp",
-            element: "Saskatchewan",
+            element: "Saskatchewan (SINP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/northwest-territories",
@@ -310,20 +335,20 @@ const router = [
           },
           {
             path: "/immigration/provincial-nominee-programs/nova-scotia-nsnp",
-            element: "Nova Scotia",
+            element: "Nova Scotia (NSNP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/prince-edward-island-peipnp",
-            element: "Prince Edward Island",
+            element: "Prince Edward Island (PEI PNP)",
           },
           {
             path: "/immigration/provincial-nominee-programs/rural-and-northern-immigration-pilot-rnip",
-            element: "Rural Northern",
+            element: "Rural & Northern Immigration Pilot (RNIP)",
           },
 
           {
             path: "/immigration/provincial-nominee-programs/yukon-ynp",
-            element: "Yukon",
+            element: "Yukon (YNP)",
           },
         ],
       },
@@ -337,18 +362,18 @@ const router = [
     path: "Business",
     children: [
       {
-        path: "quebec",
+        path: "Quebec",
         children: [
           {
-            path: "business/quebec/quebec-investor",
+            path: "/business/quebec/quebec-investor",
             element: "Quebec Investor",
           },
           {
-            path: "business/quebec/quebec-entrepreneur",
+            path: "/business/quebec/quebec-entrepreneur",
             element: "Quebec Entrepreneur",
           },
           {
-            path: "business/quebec/quebec-self-employed",
+            path: "/business/quebec/quebec-self-employed",
             element: "Self Employed",
           },
         ],
@@ -357,24 +382,24 @@ const router = [
         path: "Federal Programs",
         children: [
           {
-            path: "business/federal-programs/start-up-visa",
-            element: "Start Up Visa",
+            path: "/business/federal-programs/start-up-visa",
+            element: " Start-Up Visa (SUV)",
           },
           {
-            path: "business/federal-programs/intra-company-transfer",
-            element: "Intra Company Transfer",
+            path: "/business/federal-programs/intra-company-transfer",
+            element: "Intra-company transfer (ICT)",
           },
           {
-            path: "business/federal-programs/benefit-to-canada",
-            element: "BenefitToCanada",
+            path: "/business/federal-programs/benefit-to-canada",
+            element: "Significant Benefit to Canada (C10)",
           },
           {
-            path: "business/federal-programs/owner-operator",
-            element: "OwnerOperator",
+            path: "/business/federal-programs/owner-operator",
+            element: "Owner Operator LMIA",
           },
           {
-            path: "business/federal-programs/self-employed-person",
-            element: "Self Employed Persons",
+            path: "/business/federal-programs/self-employed-person",
+            element: "Self-Employed Persons (C11)",
           },
         ],
       },
@@ -384,32 +409,33 @@ const router = [
     path: "Work And Jobs",
     children: [
       {
-        path: "work-permit",
+        path: "/work-and-jobs/work-permit",
         element: "Work Permit",
       },
       {
-        path: "international-mobility-program",
-        element: "International Mobility Program",
+        path: "/work-and-jobs/international-mobility-program",
+        element: "International Mobility Program (IMP)",
       },
       {
-        path: "in-demand-jobs",
+        path: "/work-and-jobs/in-demand-jobs",
         element: "In Demand Jobs",
       },
       {
-        path: "support-for-employers",
+        path: "/work-and-jobs/support-for-employers",
         element: "Support For Employers",
       },
+
       {
-        path: "lmia",
+        path: "/work-and-jobs/lmia",
         element: "Lmia",
       },
-      {
-        path: "caregiver-program",
-        element: "CaregiverProgram",
-      },
+      // {
+      //   path: "/work-and-jobs/caregiver-program",
+      //   element: "Caregiver Program",
+      // },
       {
         path: "/work-and-jobs/teer-categories-and-noc",
-        element: "Teer Categories And Noc",
+        element: "TEER Categories & NOC Codes",
       },
     ],
   },
@@ -418,7 +444,7 @@ const router = [
     children: [
       {
         path: "/study/post-graduate-work-permit",
-        element: "Post Graduate Work Permit",
+        element: "Post Graduate Work Permit (PGWP)",
       },
       {
         path: "/study/study-in-canada",
@@ -426,269 +452,15 @@ const router = [
       },
       {
         path: "/study/pathway-from-study-to-pr",
-        element: "Pathway FromStudy To Pr",
+        element: "Pathway From Study To PR",
       },
       {
         path: "/study/designated-learning-institution",
-        element: "Designated Learning Institution",
+        element: "Designated Learning Institution (DLI)",
       },
       {
         path: "/study/student-direct-stream",
-        element: "Student Direct Stream",
-      },
-    ],
-  },
-];
-
-const navigationMenuConfig = [
-  {
-    id: 1,
-    title: "About Us",
-    subPages: [
-      {
-        id: 1,
-        title: "About Us",
-        link: "/about",
-      },
-      {
-        id: 2,
-        title: "Certification and Membership",
-        link: "/certifications",
-      },
-      {
-        id: 3,
-        title: "Our Services",
-        link: "/services",
-      },
-      {
-        id: 4,
-        title: "Why Choose Us",
-        link: "/why-choose-us",
-      },
-      {
-        id: 5,
-        title: "Success Customers",
-        link: "/success-customers",
-      },
-      {
-        id: 6,
-        title: "Customer Testimonials",
-        link: "/customer-testimonials",
-      },
-      {
-        id: 7,
-        title: "Price Policy",
-        link: "/price-policy",
-      },
-      {
-        id: 8,
-        title: "Book Appointment",
-        link: "/book-appointment",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Immigration",
-    subPages: [
-      {
-        id: 1,
-        title: "About Us",
-        link: "/about",
-      },
-      {
-        id: 2,
-        title: "Certification and Membership",
-        link: "/certifications",
-      },
-      {
-        id: 3,
-        title: "Our Services",
-        link: "/services",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Business",
-    subPages: [
-      {
-        id: 1,
-        title: "Quebec Investor",
-        link: "/business/quebec/quebec-investor",
-      },
-      {
-        id: 2,
-        title: "Quebec Entrepreneur",
-        link: "/business/quebec/quebec-entrepreneur",
-      },
-      {
-        id: 3,
-        title: "Quebec Self-Employed",
-        link: "/business/quebec/quebec-self-employed",
-      },
-      {
-        id: 4,
-        title: "Start-Up Visa (SUV)",
-        link: "/business/federal-programs/start-up-visa",
-      },
-      {
-        id: 5,
-        title: "Intra - Company Transfers (iCT)",
-        link: "/business/federal-programs/intra-company-transfer",
-      },
-      {
-        id: 6,
-        title: "Benefit to Canada",
-        link: "/business/federal-programs/benefit-to-canada",
-      },
-      {
-        id: 7,
-        title: "Self Employed Person",
-        link: "/business/federal-programs/self-employed-person",
-      },
-      {
-        id: 8,
-        title: "Owner Operator",
-        link: "/business/federal-programs/owner-operator",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Work & Jobs",
-    subPages: [
-      {
-        id: 1,
-        title: "About Us",
-        link: "/about",
-      },
-      {
-        id: 2,
-        title: "Certification and Membership",
-        link: "/certifications",
-      },
-      {
-        id: 3,
-        title: "Our Services",
-        link: "/services",
-      },
-      {
-        id: 4,
-        title: "Why Choose Us",
-        link: "/why-choose-us",
-      },
-      {
-        id: 5,
-        title: "Success Customers",
-        link: "/success-customers",
-      },
-      {
-        id: 6,
-        title: "Customer Testimonials",
-        link: "/customer-testimonials",
-      },
-      {
-        id: 7,
-        title: "Price Policy",
-        link: "/price-policy",
-      },
-      {
-        id: 8,
-        title: "Book Appointment",
-        link: "/book-appointment",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "Study",
-    subPages: [
-      {
-        id: 1,
-        title: "About Us",
-        link: "/about",
-      },
-      {
-        id: 2,
-        title: "Certification and Membership",
-        link: "/certifications",
-      },
-      {
-        id: 3,
-        title: "Our Services",
-        link: "/services",
-      },
-      {
-        id: 4,
-        title: "Why Choose Us",
-        link: "/why-choose-us",
-      },
-      {
-        id: 5,
-        title: "Success Customers",
-        link: "/success-customers",
-      },
-      {
-        id: 6,
-        title: "Customer Testimonials",
-        link: "/customer-testimonials",
-      },
-      {
-        id: 7,
-        title: "Price Policy",
-        link: "/price-policy",
-      },
-      {
-        id: 8,
-        title: "Book Appointment",
-        link: "/book-appointment",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Events",
-    subPages: [
-      {
-        id: 1,
-        title: "About Us",
-        link: "/about",
-      },
-      {
-        id: 2,
-        title: "Certification and Membership",
-        link: "/certifications",
-      },
-      {
-        id: 3,
-        title: "Our Services",
-        link: "/services",
-      },
-      {
-        id: 4,
-        title: "Why Choose Us",
-        link: "/why-choose-us",
-      },
-      {
-        id: 5,
-        title: "Success Customers",
-        link: "/success-customers",
-      },
-      {
-        id: 6,
-        title: "Customer Testimonials",
-        link: "/customer-testimonials",
-      },
-      {
-        id: 7,
-        title: "Price Policy",
-        link: "/price-policy",
-      },
-      {
-        id: 8,
-        title: "Book Appointment",
-        link: "/book-appointment",
+        element: "Student Direct Stream (SDS)",
       },
     ],
   },
