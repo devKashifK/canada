@@ -31,7 +31,7 @@ module.exports = {
       colors: {
         secondary: "#343436",
         destructive: "#242424",
-        highlight: "#B33D3D",
+        highlight: "#0000008c",
 
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
