@@ -1,15 +1,10 @@
-import { CardDemo } from "@/components/ui/animated-card";
 import Container from "@/components/ui/container";
-import { CtaCard2, CTADefault, truncateText } from "@/components/ui/cta";
 import { Button } from "@/components/ui/custom";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
-import HoverCard from "@/components/ui/hover-card";
 import MovingCardBorder from "@/components/ui/moving-card-border";
 import Glass from "@/lib/helpers";
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { title } from "process";
-import { Link } from "react-router-dom";
+import CountUp, { useCountUp } from "react-countup";
 
 export default function About() {
   return (
@@ -70,7 +65,7 @@ export default function About() {
           </div>
         </Glass>
       </Container>
-      <Container className="flex gap-4 flex-row flex-wrap h-max justify-center items-center">
+      <Container className="flex gap-8 flex-row flex-wrap h-max justify-center items-center">
         {data.map((item, index) => (
           // <Card
           //   key={index}
@@ -81,7 +76,7 @@ export default function About() {
           // />
           <MovingCardBorder
             animate
-            color="w-[550px] bg-gray-100 bg-opacity-20 backdrop-blur-md h-[500px] flex-wrap"
+            color="w-[450px] bg-gray-100 bg-opacity-20 backdrop-blur-md h-[500px] flex-wrap"
           >
             <div className="flex flex-col gap-0 w-full px-6 relative z-10">
               <h5 className="text-4xl text-left text-highlight">
@@ -197,7 +192,14 @@ export default function About() {
                 icon={"mdi:checkbox-marked-outline"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
               />
-              <span className="text-4xl">100 +</span>
+              <div className="flex gap-2 justify-center items-center">
+                <CountUp
+                  enableScrollSpy={true}
+                  end={100}
+                  className="text-6xl"
+                />
+                <span className="text-4xl">+</span>
+              </div>
               <span className="uppercase text-lg font-primary tracking-widest">
                 successful visas in 2023
               </span>
@@ -207,7 +209,10 @@ export default function About() {
                 icon={"icon-park-outline:message-success"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
               />
-              <span className="text-4xl">14</span>
+
+              <div className="flex gap-2 justify-center items-center">
+                <CountUp enableScrollSpy={true} end={14} className="text-6xl" />
+              </div>
               <span className="uppercase text-lg font-primary tracking-widest">
                 Success Start Up Visa
               </span>
@@ -217,7 +222,11 @@ export default function About() {
                 icon={"cil:happy"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
               />
-              <span className="text-4xl">95 %</span>
+              <div className="flex gap-2 justify-center items-center">
+                <CountUp enableScrollSpy={true} end={95} className="text-6xl" />
+                <span className="text-4xl"> %</span>
+              </div>
+
               <span className="uppercase text-lg font-primary tracking-widest">
                 happy clients
               </span>
@@ -227,9 +236,11 @@ export default function About() {
                 icon={"game-icons:trophy-cup"}
                 className="text-5xl cursor-pointer rounded-full py-2 px-2"
               />
-              <span className="text-4xl">Top 1</span>
+              <div className="flex gap-2 flex-col  justify-center items-center">
+                <CountUp enableScrollSpy={true} end={1} className="text-6xl" />
+              </div>
               <span className="uppercase text-lg font-primary tracking-widest">
-                Consultants in Saskatchewan
+                Consultants
               </span>
             </div>
           </div>

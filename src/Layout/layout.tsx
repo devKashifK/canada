@@ -5,10 +5,8 @@ import { Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
   const location = useLocation();
-  console.log(location);
   const pathSegments = location.pathname.split("/");
   const path = pathSegments[pathSegments.length - 1];
-  console.log(path);
 
   const text = {
     "/": "We are a team of professionals who are passionate about helping you achieve",
@@ -42,7 +40,7 @@ const Layout = () => {
     },
     "customer-testimonials": {
       text: "Please Rate Our Quality",
-      image: "/customertestimonial.png",
+      image: "/testimonial.jpg",
     },
     "express-entry": {
       text: "Express Entry",

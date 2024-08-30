@@ -57,6 +57,7 @@ import QuebecEntrepreneur from "./pages/business/quebec/quebec-entrepreneur.tsx"
 import QuebecInvestor from "./pages/business/quebec/quebec-investor.tsx";
 import WorkAndJobs from "./pages/work-and-jobs/page.tsx";
 import OurSuccessCustomers from "./pages/about/our-success-customers.tsx";
+import Price from "./pages/price/price.tsx";
 
 const router = createBrowserRouter([
   {
@@ -94,10 +95,6 @@ const router = createBrowserRouter([
       {
         path: "why-choose-us",
         element: <WhyChooseUs />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
       },
     ],
   },
@@ -315,6 +312,16 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "price",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Price />,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -322,3 +329,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <RouterProvider router={router} />
   </LanguageProvider>
 );
+
+// Book Appointment
+// why choose us fix
+// contact
+// start reviewing from immigration

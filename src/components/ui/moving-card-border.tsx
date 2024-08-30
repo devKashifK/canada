@@ -26,7 +26,7 @@ export default function MovingCardBorder({
       ) : (
         <div className="card_effect"></div>
       )}
-      <div className={cn("relative z-10 h-full px-10 py-14", className)}>
+      <div className={cn("relative z-10 h-full px-10 py-14 ", className)}>
         {children}
       </div>
     </div>

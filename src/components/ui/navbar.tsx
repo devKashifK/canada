@@ -34,46 +34,55 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
           >
             <span
               className={cn(
-                "group-hover:text-slate-900 duration-150 ease-out",
-                defaultStyle && "text-white/60"
+                type === "default" ? "text-white" : "text-white/60"
               )}
             >
               News
             </span>
-            <div className="group-hover:border-b-slate-900 w-full border border-transparent ease-out duration-150"></div>
+            <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
           </Link>
-          <Link to={"/about"} className="text-xs flex flex-col gap-0.5 group">
+          <Link to={"/visitor"} className="text-xs flex flex-col gap-0.5 group">
             <span
               className={cn(
-                "group-hover:text-slate-900 duration-150 ease-out",
-                defaultStyle && "text-white/60"
+                type === "default" ? "text-white" : "text-white/60"
               )}
             >
               Visitor
             </span>
-            <div className="group-hover:border-b-slate-900 w-full border border-transparent ease-out duration-150"></div>
+            <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
           </Link>
-          <Link to={"/about"} className="text-xs flex flex-col gap-0.5 group">
+          <Link
+            to={"/family-sponsorship"}
+            className="text-xs flex flex-col gap-0.5 group"
+          >
             <span
               className={cn(
-                "group-hover:text-slate-900 duration-150 ease-out",
-                defaultStyle && "text-white/60"
+                type === "default" ? "text-white" : "text-white/60"
               )}
             >
               Family Sponsorship
             </span>
-            <div className="group-hover:border-b-slate-900 w-full border border-transparent ease-out duration-150"></div>
+            <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
+          </Link>
+          <Link to={"/price"} className="text-xs flex flex-col gap-0.5 group">
+            <span
+              className={cn(
+                type === "default" ? "text-white" : "text-white/60"
+              )}
+            >
+              Price Policy
+            </span>
+            <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
           </Link>
           <Link to={"/contact"} className="text-xs flex flex-col gap-0.5 group">
             <span
               className={cn(
-                "group-hover:text-slate-900 duration-150 ease-out",
-                defaultStyle && "text-white/60"
+                type === "default" ? "text-white" : "text-white/60"
               )}
             >
               Contact Us
             </span>
-            <div className="group-hover:border-b-slate-900 w-full border border-transparent ease-out duration-150"></div>
+            <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
           </Link>
           <a
             href="https://api.whatsapp.com/send?phone=16476197975"
@@ -101,6 +110,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
             <span className="text-xs">Free Consultation</span>
           </Button>
         </div>
+
         <div className="flex justify-start gap-4 items-center px-4 w-full h-16">
           <NavigationMenu>
             <NavigationMenuList className="flex gap-4">
@@ -112,13 +122,13 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                   {navItem.element ? (
                     <NavigationMenuLink
                       className={cn(
-                        "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 relative group bg-transparent"
+                        "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-highlight data-[state=open]:bg-highlight hover:bg-highlight relative group bg-transparent "
                       )}
                     >
                       <Link
                         className={cn(
                           type === "default" &&
-                            "text-white group-hover:text-black"
+                            "text-white  group-hover:text-white"
                         )}
                         to={navItem.path}
                         unstable_viewTransition
@@ -260,14 +270,6 @@ const router = [
       {
         path: "/why-choose-us",
         element: "Why Choose Us",
-      },
-      {
-        path: "/price-policy",
-        element: "Price Policy",
-      },
-      {
-        path: "/contact",
-        element: "Contact",
       },
     ],
   },

@@ -11,14 +11,14 @@ import React from "react";
 export default function Price() {
   return (
     <Container className="flex flex-col gap-20 py-10">
-      <MovingCardBorder className="flex flex-col justify-center items-center gap-6">
+      <MovingCardBorder className="rounded-2xl shadow-2xl flex flex-col justify-center items-center gap-6">
         <h3 className="tracking-widest text-4xl text-highlight">
           SPECIAL DISCOUNT OF THE MONTH
         </h3>
         <h3 className="text-3xl">$99 / PGWP</h3>
         <p>Only in Jan 2024. Enjoy 75% discount for PGWP application fee.</p>
         <Button
-          className="py-0.5 w-max"
+          className="py-1 w-max"
           icon={
             <div className="flex gap-2 justify-center items-center text-xs">
               <Icon icon={"mdi:phone"} />

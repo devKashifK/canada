@@ -87,7 +87,7 @@ export default function Visitor() {
         </Glass>
       </Container>
       <Container>
-        <Title
+        {/* <Title
           subtitle="Take the first step towards your family's Canadian dream"
           title={
             <p className="text-xl text-black/50 w-full text-left pt-3">
@@ -95,11 +95,11 @@ export default function Visitor() {
               solution
             </p>
           }
-        />
+        /> */}
         <CTADefault
           title="Family Sponsor"
           subtitle={
-            <p className="text-4xl text-white/90">
+            <p className="text-2xl text-white/90">
               Book a consultation today to explore immigration options
               <br />
               and secure your family's future in Canada.
