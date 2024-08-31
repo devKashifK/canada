@@ -29,7 +29,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
       <div className="flex flex-col w-full justify-start items-start h-24">
         <div className="w-full flex gap-10 py-2 justify-end items-center px-6">
           <Link
-            to={"/about"}
+            to={"/news"}
             className="bg-transparent text-xs flex flex-col gap-0.5 group"
           >
             <span

@@ -1,9 +1,7 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "../app/globals.css";
-import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
-import Contact from "./pages/contact.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout/layout.tsx";
 import About from "./pages/about/about.tsx";
 import OurService from "./pages/about/our-service.tsx";
@@ -14,11 +12,7 @@ import BookAppointment from "./pages/about/book-appointment.tsx";
 import FedralSkilledWorker from "./pages/immigration/express-entry/federal-skilled-worker.tsx";
 import FedralSkilledTrade from "./pages/immigration/express-entry/federal-skilled-trade.tsx";
 import CanadianExperienceClass from "./pages/immigration/express-entry/canadian-express-class.tsx";
-// import ExpressEntry from "./pages/immigration/express-entry/page.tsx";
 import ImmigrationChallenges from "./pages/immigration/immigration-challenges/page.tsx";
-import ExpressEntry from "./pages/immigration/express-entry/page.tsx";
-import ProvincialNomineeProgram from "./pages/immigration/provincial-nominee-programs/page.tsx";
-import path from "path";
 import Alberta from "./pages/immigration/provincial-nominee-programs/alberta-immigration-aaip.tsx";
 import Atlantic from "./pages/immigration/provincial-nominee-programs/atlantic-immigration-aipp.tsx";
 import BritishColumbia from "./pages/immigration/provincial-nominee-programs/british-columbia-bcpnp.tsx";
@@ -58,7 +52,11 @@ import QuebecInvestor from "./pages/business/quebec/quebec-investor.tsx";
 import WorkAndJobs from "./pages/work-and-jobs/page.tsx";
 import OurSuccessCustomers from "./pages/about/our-success-customers.tsx";
 import Price from "./pages/price/price.tsx";
+import News from "./pages/news/news.tsx";
+import Post from "./pages/news/post.tsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -322,12 +320,26 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "news",
+    element: <Layout />,
+    children: [
+      {
+        path: "/news",
+        element: <News />,
+      },
+      {
+        path: "/news/:postId",
+        element: <Post />,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <LanguageProvider>
+  <QueryClientProvider client={queryClient}>
     <RouterProvider router={router} />
-  </LanguageProvider>
+  </QueryClientProvider>
 );
 
 // Book Appointment

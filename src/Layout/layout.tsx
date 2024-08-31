@@ -14,6 +14,10 @@ const Layout = () => {
       text: "GreenTech Resources Worldwide <br /> Canada",
       image: "/about.png",
     },
+    news: {
+      text: "Latest News and Updates",
+      image: "/news.jpg",
+    },
     contact: {
       text: "GreenTech Resources Worldwide <br /> Canada",
       image: "/about.png",
