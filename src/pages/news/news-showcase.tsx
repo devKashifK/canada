@@ -13,7 +13,6 @@ export default function NewsShowcase() {
       return response.data;
     },
   });
-  console.log(data);
   return (
     <Swiper
       spaceBetween={30}
