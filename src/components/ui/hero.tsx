@@ -72,7 +72,7 @@ export default function Hero() {
                 >
                   <path
                     d="M1.3606 6.99989C21.2036 4.49991 189.869 -0.362312 249.002 6.99999C218.307 6.99999 178.315 5.24446 152.565 13"
-                    stroke="#b33d3d"
+                    stroke="#0000008c"
                     stroke-width="6"
                     stroke-linejoin="round"
                   ></path>

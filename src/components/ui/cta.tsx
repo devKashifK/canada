@@ -150,7 +150,7 @@ const CtaDetails = [
     labels: ["Express Entry Program", "Family Sponsorship"],
     description:
       "With immigration to Canada at an all-time high, now is the perfect time to start your immigration journey. There are numerous pathways to immigrate to Canada and attain permanent residency. While immigration to Canada requires significant financial and emotional investment, the ultimate results are well worth it. Canada consistently ranks among the top countries for quality of life and is known for its positive attitude toward immigration.",
-    href: "",
+    href: "immigration/express-entry",
   },
   {
     id: 2,
@@ -161,7 +161,7 @@ const CtaDetails = [
     labels: ["Express Entry", "PR eligibility"],
     description:
       "Canada with strong economy, quality of life, and inclusive society make it an appealing destination for those seeking career growth and a high standard of living for their family. However, navigating the immigration process and meeting language requirements are essential aspects.",
-    href: "",
+    href: "work-and-jobs/work-permit",
   },
   {
     id: 3,
@@ -172,7 +172,7 @@ const CtaDetails = [
     labels: ["Quebec Investor", "Start Up Visa"],
     description:
       "The business immigration visa programs in Canada are designed for individuals who wish to immigrate to Canada to start, invest in, or manage a business. These programs aim to promote economic growth and job creation in Canada.",
-    href: "",
+    href: "business/federal-programs/self-employed-person",
   },
   {
     id: 4,
@@ -183,7 +183,7 @@ const CtaDetails = [
     labels: ["High Quality Education", "Diverse Campuses and Programs"],
     description:
       "Canada is known for its top-notch educational institutions. Many universities and colleges consistently rank among the best globally. Canadian degrees and diplomas are recognized and respected worldwide..",
-    href: "",
+    href: "study/study-in-canada",
   },
 
   {
@@ -195,7 +195,7 @@ const CtaDetails = [
     labels: ["Sponsoring a spouse or partner", "Sponsoring dependent children"],
     description:
       "Other than the regular visa application programs, people can also apply for a visa or even permanent residence under certain sponsorship programs which allow eligible individuals to sponsor their close family members for permanent residency in Canada.",
-    href: "",
+    href: "/family-sponsorship",
   },
 
   {
@@ -207,7 +207,7 @@ const CtaDetails = [
     labels: ["Why GTR Immigration?", "Reasonable cost guaranteed quality"],
     description:
       "Saskatchewan stands out as a province in Canada with open immigration schemes that are suitable for many individuals seeking to establish themselves in the country.",
-    href: "",
+    href: "/about",
   },
 ];
 

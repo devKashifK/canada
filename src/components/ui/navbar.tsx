@@ -30,22 +30,21 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
         <div className="w-full flex gap-10 py-2 justify-end items-center px-6">
           <Link
             to={"/news"}
-            className="bg-transparent text-xs flex flex-col gap-0.5 group"
+            className="bg-transparent text-xs font-bold flex flex-col gap-0.5 group"
           >
             <span
-              className={cn(
-                type === "default" ? "text-white" : "text-white/60"
-              )}
+              className={cn(type === "default" ? "text-white" : "text-black")}
             >
               News
             </span>
             <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
           </Link>
-          <Link to={"/visitor"} className="text-xs flex flex-col gap-0.5 group">
+          <Link
+            to={"/visitor"}
+            className="text-xs font-bold flex flex-col gap-0.5 group"
+          >
             <span
-              className={cn(
-                type === "default" ? "text-white" : "text-white/60"
-              )}
+              className={cn(type === "default" ? "text-white" : "text-black")}
             >
               Visitor
             </span>
@@ -53,32 +52,32 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
           </Link>
           <Link
             to={"/family-sponsorship"}
-            className="text-xs flex flex-col gap-0.5 group"
+            className="text-xs flex font-bold flex-col gap-0.5 group"
           >
             <span
-              className={cn(
-                type === "default" ? "text-white" : "text-white/60"
-              )}
+              className={cn(type === "default" ? "text-white" : "text-black")}
             >
               Family Sponsorship
             </span>
             <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
           </Link>
-          <Link to={"/price"} className="text-xs flex flex-col gap-0.5 group">
+          <Link
+            to={"/price"}
+            className="text-xs font-bold flex flex-col gap-0.5 group"
+          >
             <span
-              className={cn(
-                type === "default" ? "text-white" : "text-white/60"
-              )}
+              className={cn(type === "default" ? "text-white" : "text-black")}
             >
               Price Policy
             </span>
             <div className="group-hover:bg-white w-full border border-transparent ease-out duration-150"></div>
           </Link>
-          <Link to={"/contact"} className="text-xs flex flex-col gap-0.5 group">
+          <Link
+            to={"/contact"}
+            className="text-xs font-bold flex flex-col gap-0.5 group"
+          >
             <span
-              className={cn(
-                type === "default" ? "text-white" : "text-white/60"
-              )}
+              className={cn(type === "default" ? "text-white" : "text-black")}
             >
               Contact Us
             </span>
@@ -122,7 +121,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                   {navItem.element ? (
                     <NavigationMenuLink
                       className={cn(
-                        "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-highlight data-[state=open]:bg-highlight hover:bg-highlight relative group bg-transparent "
+                        "group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-highlight data-[state=open]:bg-highlight hover:bg-[#b33d3d] relative group bg-transparent "
                       )}
                     >
                       <Link
@@ -226,7 +225,7 @@ const renderSubmenus = (submenus) => {
             </div>
           ) : (
             <Link
-              className="text-left text-sm border-b last:border-b-0 px-2 w-full"
+              className="text-left hover:bg-[#b33d3d] hover:text-white py-1 rounded-md text-sm border-b last:border-b-0 px-2 w-full"
               to={subPage.path}
               unstable_viewTransition
             >

@@ -102,10 +102,10 @@ export const InfiniteMovingCards = ({
                 {item.quote}
               </span>
               <div className="flex gap-2 justify-start mt-6 items-center">
-                <div className="border border-highlight rounded-2xl w-20 h-20">
+                <div className="border border-highlight rounded-full w-20 h-20">
                   <img
-                    src="/girl.jpeg"
-                    className="w-full h-full rounded-2xl border-highlight border bg-cover"
+                    src={item.image}
+                    className="w-full h-full rounded-full border-highlight border bg-cover"
                     alt=""
                   />
                 </div>

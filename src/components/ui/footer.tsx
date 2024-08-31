@@ -1,38 +1,61 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 import { Button } from "./custom";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <div className="flex flex-col w-[97%] mx-auto rounded-2xl shadow-2xl">
-      <div className="bg-secondary/40 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-[500px] flex gap-10 px-12 py-16 items-center justify-center text-white">
-        <div className="flex flex-col gap-10 flex-1 text-white/50 pt-10 font-extralight justify-start items-start">
+      <div className="bg-secondary/20 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-60 rounded-t-2xl h-[500px] flex gap-10 px-12 py-16 items-center justify-center text-white">
+        <div className="flex flex-col gap-10 flex-1 text-white/50 pt-10  justify-start items-start">
           <img src="/gt-removebg.png" alt="" className="w-[70%] pl-10" />
 
-          <div className="flex flex-col gap-2 text-stone-100 justify-start items-start w-full cursor-pointer pl-10 text-sm">
-            <span className="border-b  w-[80%] text-left border-white/25 px-8 block">
+          <div className="flex flex-col gap-2 text-white font-normal justify-start items-start w-full cursor-pointer pl-10 text-sm">
+            <Link
+              to={"/about"}
+              className="border-b  w-[80%] text-left border-white/25 px-8 block"
+            >
               About us
-            </span>
-            <span className="border-b w-[80%] text-left border-white/25 px-8 block">
+            </Link>
+            <Link
+              to={"/our-service"}
+              className="border-b w-[80%] text-left border-white/25 px-8 block"
+            >
               Our Services
-            </span>
-            <span className="border-b w-[80%] text-left border-white/25 px-8 block">
+            </Link>
+            <Link
+              to={"/why-choose-us"}
+              className="border-b w-[80%] text-left border-white/25 px-8 block"
+            >
               Why Choose Us
-            </span>
-            <span className="border-b w-[80%] text-left border-white/25 px-8 block">
+            </Link>
+            <Link
+              to={"/study/study-in-canada"}
+              className="border-b w-[80%] text-left border-white/25 px-8 block"
+            >
+              Study
+            </Link>
+            <Link
+              to={"/customer-testimonials"}
+              className="border-b w-[80%] text-left border-white/25 px-8 block"
+            >
               Visa Success Stories
-            </span>
-            <span className="border-b w-[80%] text-left border-white/25 px-8 block">
-              Customer Review
-            </span>
-            <span className="border-b w-[80%] text-left border-white/25 px-8 block">
+            </Link>
+
+            <Link
+              to={"/book-appointment"}
+              className="border-b w-[80%] text-left border-white/25 px-8 block"
+            >
               Make Appointment
-            </span>
-            <span className="border-b w-[80%] text-left border-white/25 px-8 block">
-              Customer Review
-            </span>
+            </Link>
+            <Link
+              to={"/work-and-jobs/work-permit"}
+              className="border-b w-[80%] text-left border-white/25 px-8 block"
+            >
+              Work and Jobs
+            </Link>
           </div>
-          <div className="flex flex-row gap-2 text-xs text-white pb-12 px-10">
+          <div className="flex flex-row gap-2 text-sm font-normal text-white pb-12 px-10">
             <div className="w-[40%] text-left">
               2124 Broad St, Regina, Saskatchewan,Canada S4P 1Y5 (Registered
               office)
@@ -53,7 +76,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-3 flex-1 h-full text-white font-extralight  justify-start items-start px-5">
+        <div className="flex flex-col gap-3 flex-1 h-full text-white font-normal  justify-start items-start px-5">
           <div className="flex flex-col gap-5">
             <p className="text-sm text-left">Follow us</p>
             <div className="h-10  border-gray-400 flex flex-row">

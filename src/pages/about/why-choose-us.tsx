@@ -71,27 +71,25 @@ export default function WhyChooseUs() {
         </Glass>
       </Container>
       <Container>
-        <div className="flex-1 flex flex-col gap-4">
-          <Title
-            subtitle="Express Entry"
-            title={
-              <p className="text-4xl text-black/50 w-full text-left pt-3">
-                What can we help you?
-              </p>
-            }
-          />
+        <Glass className="flex flex-col px-10 gap-4">
+          <div className="flex-1 flex flex-col gap-2">
+            <Title
+              subtitle="Express Entry"
+              title={
+                <p className="text-4xl text-black/50 w-full text-left pt-3">
+                  What can we help you?
+                </p>
+              }
+            />
 
-          <div className="flex flex-col justify-start gap-6">
-            <p className="text-sm text-black/60 text-left">
-              GreenTech Resources Worldwide Canada can assist you in increasing
-              your Comprehensive Ranking System (CRS) score for Express Entry in
-              several ways:
-            </p>
+            <div className="flex flex-col justify-start gap-6">
+              <p className="text-sm text-black/60 text-left">
+                GreenTech Resources Worldwide Canada can assist you in
+                increasing your Comprehensive Ranking System (CRS) score for
+                Express Entry in several ways:
+              </p>
+            </div>
           </div>
-        </div>
-      </Container>
-      <Container>
-        <Glass>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
             {appointment.map((feature, index) => (
               <Feature key={feature.title} {...feature} index={index} />

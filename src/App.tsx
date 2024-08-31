@@ -1,14 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import "./App.css";
 import Container from "./components/ui/container";
 import CTA, { CTADefault } from "./components/ui/cta";
 import Jobs from "./components/ui/jobs";
-import { NewsFeedCard } from "./components/ui/newsCard";
 import { InfiniteMovingCardsDemo } from "./components/ui/testimonial";
 import Title from "./components/ui/Title";
 import WhyChooseUs from "./components/ui/why-choose-us";
-import { Autoplay } from "swiper/modules";
-import "aos/dist/aos.css";
+import NewsShowcase from "./pages/news/news-showcase";
 
 function App() {
   // useEffect(() => {
@@ -24,34 +21,9 @@ function App() {
           cta="All News & Events"
           subtitle="Canada Immigration News"
           title="Latest News & Events"
-          to=""
+          to="/news"
         />
-        {/* <div className="grid grid-cols-3 gap-6"> */}
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={3}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-          className="flex gap-2 overflow-hidden"
-          style={{ width: "100%" }}
-          modules={[Autoplay]}
-        >
-          {dummyNews.map((item, index) => (
-            <SwiperSlide key={index}>
-              <NewsFeedCard
-                title={item.title}
-                subTitle={item.subTitle}
-                comments={item.comments}
-                date={item.date}
-                description={item.description}
-                image={item.image}
-                key={item.id}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        {/* </div> */}
+        <NewsShowcase />
       </Container>
       <CTADefault
         title="Empowering Your Canadian Dream"
@@ -62,11 +34,11 @@ function App() {
             immigration options and secure your family’s future in Canada.
           </p>
         }
-        image={"/toronto.jpg"}
+        image={"/immigrate.jpg"}
       />
 
       <InfiniteMovingCardsDemo />
-      <Jobs />
+      {/* <Jobs /> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import Navbar from "./navbar";
 import { Button } from "./custom";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 export default function HeroDefault({
   img,
   text,
@@ -27,9 +27,12 @@ export default function HeroDefault({
         </div>
       </div>
       <div className="absolute bottom-8 px-12 z-10 flex justify-start items-center gap-2 cursor-pointer">
-        <span className="text-white/60 uppercase font-primary tracking-widest">
+        <Link
+          to={"/"}
+          className="text-white/60 uppercase font-primary tracking-widest"
+        >
           Home
-        </span>
+        </Link>
         <Icon
           icon={"zondicons:cheveron-right"}
           className="text-white/60 -mt-1"

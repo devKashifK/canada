@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -12,6 +13,10 @@ export const Button = ({
   className,
   ...props
 }: ButtonProps) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/book-appointment");
+  };
   return (
     <button
       className={cn(
@@ -19,6 +24,7 @@ export const Button = ({
         className
       )}
       {...props}
+      onClick={handleClick}
     >
       <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
         {children}

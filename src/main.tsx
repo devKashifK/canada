@@ -55,6 +55,7 @@ import Price from "./pages/price/price.tsx";
 import News from "./pages/news/news.tsx";
 import Post from "./pages/news/post.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Contact from "./pages/contact/contact.tsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -317,6 +318,16 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Price />,
+      },
+    ],
+  },
+  {
+    path: "contact",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Contact />,
       },
     ],
   },

@@ -19,8 +19,8 @@ const Layout = () => {
       image: "/news.jpg",
     },
     contact: {
-      text: "GreenTech Resources Worldwide <br /> Canada",
-      image: "/about.png",
+      text: "Contact Us",
+      image: "/hero-2.jpg",
     },
     "our-success-customers": {
       text: "Our Success Stories",
@@ -163,13 +163,18 @@ const Layout = () => {
       text: "Family Sponsorship",
       image: "/about.png",
     },
+    price: {
+      text: "Our Price Policy",
+      image: "/cost.jpg",
+    },
+
     "work-and-jobs": {
       text: "Work in Canada",
       image: "/immigration.png",
     },
     "work-permit": {
       text: "Work Permit (WP)",
-      image: "experince.jpg",
+      image: "/experince.jpg",
     },
     "international-mobility-program": {
       text: "International Mobility Program (IMP)",
