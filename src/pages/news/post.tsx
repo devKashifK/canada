@@ -76,10 +76,14 @@ export default function Post() {
           <img
             src={data.image}
             alt="news"
-            className="w-full h-[400px] object-cover"
+            className="w-full rounded-2xl h-[400px] object-cover"
           />
         ) : (
-          <img src={getRandomImage()} alt="" />
+          <img
+            src={getRandomImage()}
+            className="w-full rounded-2xl h-[400px] object-cover"
+            alt=""
+          />
         )}
         {data && <div dangerouslySetInnerHTML={{ __html: data.content }} />}
         <div className="flex justify-between items-center w-full">

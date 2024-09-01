@@ -7,6 +7,7 @@ import { FeatureSection } from "@/components/ui/feature";
 import HoverCard from "@/components/ui/hover-card";
 import { ServicesCard } from "@/components/ui/services-card";
 import Title from "@/components/ui/Title";
+import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 
@@ -92,47 +93,49 @@ H2Y 1T8 CANADA"
         />
       </div>
 
-      <div className="flex-1 flex flex-col gap-2 pt-8 justify-center items-center">
-        <Title
-          subtitle="Québec Entrepreneur Program"
-          title="What can we help you?    "
-          description="It’s important to choose a reputable and licensed immigration agent or consultant who is knowledgeable about the Québec immigration programs to ensure that applicants receive accurate and up-to-date information and guidance throughout the process."
-        />
+      <Glass className=" flex flex-col gap-10 px-10">
+        <div className="flex-1 flex flex-col gap-2 pt-8 justify-center items-center">
+          <Title
+            subtitle="Québec Entrepreneur Program"
+            title="What can we help you?    "
+            description="It’s important to choose a reputable and licensed immigration agent or consultant who is knowledgeable about the Québec immigration programs to ensure that applicants receive accurate and up-to-date information and guidance throughout the process."
+          />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-          {features.map((feature, index) => (
-            <Feature key={feature.title} {...feature} index={index} />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
+            {features.map((feature, index) => (
+              <Feature key={feature.title} {...feature} index={index} />
+            ))}
+          </div>
+
+          <Title
+            className="justify-center items-center mt-4"
+            title={
+              <p className="text-2xl text-black/50 w-full text">
+                Take the first step towards your family's Canadian dream
+              </p>
+            }
+            description={
+              <p className="text-center  text-black/50 w-[70%]">
+                For personalized assistance and expert guidance, contact
+                GreenTech Resources Worldwide Canada so our experts can help you
+                navigate the work permit application process and ensure a smooth
+                transition to working in Canada
+              </p>
+            }
+          />
+          <Button
+            className="py-3 px-6 mt-3"
+            icon={
+              <div className="flex gap-2 justify-center items-center text-xs ">
+                <Icon icon={"mdi:phone"} />
+                <span>+1855 477 9797</span>
+              </div>
+            }
+          >
+            <span className="text-sm">Book An Appointment</span>
+          </Button>
         </div>
-
-        <Title
-          className="justify-center items-center mt-4"
-          title={
-            <p className="text-2xl text-black/50 w-full text">
-              Take the first step towards your family's Canadian dream
-            </p>
-          }
-          description={
-            <p className="text-center  text-black/50 w-[70%]">
-              For personalized assistance and expert guidance, contact GreenTech
-              Resources Worldwide Canada so our experts can help you navigate
-              the work permit application process and ensure a smooth transition
-              to working in Canada
-            </p>
-          }
-        />
-        <Button
-          className="py-3 px-6 mt-3"
-          icon={
-            <div className="flex gap-2 justify-center items-center text-xs ">
-              <Icon icon={"mdi:phone"} />
-              <span>+1855 477 9797</span>
-            </div>
-          }
-        >
-          <span className="text-sm">Book An Appointment</span>
-        </Button>
-      </div>
+      </Glass>
     </Container>
   );
 }
