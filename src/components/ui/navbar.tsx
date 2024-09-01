@@ -428,7 +428,7 @@ const router = [
 
       {
         path: "/work-and-jobs/lmia",
-        element: "Lmia",
+        element: "LMIA",
       },
       // {
       //   path: "/work-and-jobs/caregiver-program",

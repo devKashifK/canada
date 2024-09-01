@@ -72,6 +72,15 @@ export default function Post() {
   return (
     <Container className="text-left post flex gap-6 flex-row">
       <Glass className="px-14 w-[70%] py-10 flex flex-col gap-8">
+        {data && data.image ? (
+          <img
+            src={data.image}
+            alt="news"
+            className="w-full h-[400px] object-cover"
+          />
+        ) : (
+          <img src={getRandomImage()} alt="" />
+        )}
         {data && <div dangerouslySetInnerHTML={{ __html: data.content }} />}
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-2">
@@ -189,4 +198,25 @@ function HoverCard({
       </Link>
     </div>
   );
+}
+
+function getRandomImage() {
+  const images = [
+    "/aaa.jpg",
+    "/about.png",
+    "/alberta.jpg",
+    "/british.jpg",
+    "/canada.jpg",
+    "/cost.jpg",
+    "/business.jpg",
+    "/experince.jpg",
+    "/expressEntry.png",
+    "/family.jpg",
+    "/federalSkill.png",
+    "/foru1.png",
+    "/foru2.png",
+    "immigrate.jpg",
+    "immigration.png",
+  ];
+  return images[Math.floor(Math.random() * images.length)];
 }

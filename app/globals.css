@@ -66,6 +66,9 @@
   h1 {
     @apply font-primary;
   }
+  body {
+    @apply overflow-x-hidden;
+  }
   h2 {
     @apply font-primary;
   }

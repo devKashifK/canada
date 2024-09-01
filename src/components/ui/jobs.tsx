@@ -8,7 +8,7 @@ import { Autoplay } from "swiper/modules";
 
 export default function Jobs() {
   return (
-    <Container className="">
+    <Container effect="slide-down" className="">
       <Glass className="flex flex-col gap-8 px-10 py-10">
         <Title
           subtitle="Looking a job in Canada?"

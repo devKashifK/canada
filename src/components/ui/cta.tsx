@@ -9,7 +9,7 @@ import Glass from "@/lib/helpers";
 
 export default function CTA() {
   return (
-    <Container>
+    <Container effect="slide-left">
       <Title
         title={
           <p className="text-5xl text-black/50 w-full text-left">
@@ -150,7 +150,7 @@ const CtaDetails = [
     labels: ["Express Entry Program", "Family Sponsorship"],
     description:
       "With immigration to Canada at an all-time high, now is the perfect time to start your immigration journey. There are numerous pathways to immigrate to Canada and attain permanent residency. While immigration to Canada requires significant financial and emotional investment, the ultimate results are well worth it. Canada consistently ranks among the top countries for quality of life and is known for its positive attitude toward immigration.",
-    href: "immigration/express-entry",
+    href: "/immigration/express-entry/federal-skilled-worker",
   },
   {
     id: 2,

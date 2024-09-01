@@ -8,7 +8,7 @@ import Title from "./Title";
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <Container>
+    <Container effect="slide-left">
       <Title
         subtitle="What Happy Client Say"
         title="Real Stories"

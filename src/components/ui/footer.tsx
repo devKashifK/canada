@@ -123,7 +123,7 @@ export default function Footer() {
 
             <div className="pt-4">
               <Button
-                className="py-2 px-4 bg-red-600 text-stone-50"
+                className="py-2 px-4  text-stone-50"
                 icon={
                   <div className="flex gap-2 justify-center items-center text-xs">
                     <Icon icon={"mdi:phone"} />

@@ -16,7 +16,7 @@ function App() {
     <div className="py-10 flex flex-col gap-12">
       <CTA />
       <WhyChooseUs />
-      <Container className="flex gap-10">
+      <Container effect="slide-up" className="flex gap-10">
         <Title
           cta="All News & Events"
           subtitle="Canada Immigration News"
