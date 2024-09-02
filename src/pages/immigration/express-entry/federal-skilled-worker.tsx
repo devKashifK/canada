@@ -72,7 +72,7 @@ export default function FedralSkilledWorker() {
               from the Canadian government to immigrate and work in the country.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {workersList.map((item, index) => (
               <ServicesCard
                 id={item.id}
@@ -86,13 +86,14 @@ export default function FedralSkilledWorker() {
       </Container>
       <CTA />
 
-      <Container className="flex flex-row gap-16 py-10 justify-center items-center">
+      <Container className="flex flex-col md:flex-row gap-16 py-10 justify-center items-center">
         <div className="flex-1 relative">
           <div className="absolute top-0 left-0 w-full h-full bg-gray-50 bg-opacity-20"></div>
           <img src="/work.jpg" className="rounded-md" alt="" />
         </div>
         <div className="flex-1 flex flex-col gap-4">
           <Title
+            className="px-4"
             subtitle="FAQ"
             title={"How to apply for a Work Permit"}
             description="Applying for a work permit in Canada can be a multi-step process, depending on your situation and the type of work permit you require. Here are the general steps to follow"
@@ -112,7 +113,11 @@ export const FAQ = ({
   description?: void;
 }) => {
   return (
-    <Accordion type="single" collapsible className="w-full flex flex-col gap-2">
+    <Accordion
+      type="single"
+      collapsible
+      className="w-full px-2 md:px-0 flex flex-col gap-2"
+    >
       <AccordionItem value="item-1" className="w-full ">
         <AccordionTrigger>{title}</AccordionTrigger>
         <AccordionContent className="">

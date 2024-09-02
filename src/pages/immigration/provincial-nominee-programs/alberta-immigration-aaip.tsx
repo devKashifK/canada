@@ -4,14 +4,11 @@ import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";
 import { truncateTextHeading } from "@/components/ui/cta";
 import Title from "@/components/ui/Title";
-import { useLanguageContext } from "@/context/LanguageProvider";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { FAQ } from "../express-entry/federal-skilled-worker";
 
 export default function Alberta() {
-  const { state, dispatch } = useLanguageContext();
-  const { language } = state;
   return (
     <>
       <Container>

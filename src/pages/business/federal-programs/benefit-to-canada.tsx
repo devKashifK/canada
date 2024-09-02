@@ -29,7 +29,7 @@ export default function BenefitToCanada() {
             through Express Entry’s Canadian Experience Class program
           </p>
         </div>
-        <div className="flex w-full gap-3">
+        <div className="flex md:flex-row flex-col w-full gap-3">
           <HoverCard
             color="bg-sky-400"
             icon={

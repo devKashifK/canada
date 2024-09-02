@@ -52,7 +52,7 @@ export default function QuebecEntrepreneur() {
           title={"Supporting Organizations"}
           description="To establish and run an innovative business in Québec, you are required to collaborate with a support organization, which could be a business accelerator, business incubator, or a university entrepreneurship center"
         />
-        <div className="flex gap-4">
+        <div className="flex md:flex-row flex-col gap-4">
           {points.map((item) => (
             <ServicesCard
               title={item.title}
@@ -69,7 +69,7 @@ export default function QuebecEntrepreneur() {
         }
       />
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 md:flex-row flex-col">
         <HoverCard
           color="bg-sky-400"
           icon="fa6-brands:wpforms"

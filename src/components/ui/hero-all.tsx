@@ -21,7 +21,7 @@ export default function HeroDefault({
         <Navbar defaultStyle={true} />
         <div className="flex justify-center items-center w-full h-full mt-10 ">
           <div
-            className="text-6xl font-primary tracking-widest text-white"
+            className="text-6xl h-full flex justify-center items-center font-primary tracking-widest text-white md:mt-0 mt-40"
             dangerouslySetInnerHTML={{ __html: text }}
           />
         </div>

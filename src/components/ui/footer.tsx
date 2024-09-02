@@ -55,7 +55,7 @@ export default function Footer() {
               Work and Jobs
             </Link>
           </div>
-          <div className="flex flex-row gap-2 text-sm font-normal text-white pb-12 md:px-10">
+          <div className="flex flex-col gap-6 md:gap-2 md:flex-row  text-sm font-normal text-white pb-12 md:px-10">
             <div className="w-[40%] text-left">
               2124 Broad St, Regina, Saskatchewan,Canada S4P 1Y5 (Registered
               office)
@@ -76,7 +76,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-3 flex-1 h-full text-white font-normal  justify-start items-start px-5">
+        <div className="flex flex-col gap-3 flex-1 h-full text-white font-normal  justify-start items-start md:px-5">
           <div className="flex flex-col gap-5">
             <p className="text-sm text-left">Follow us</p>
             <div className="h-10  border-gray-400 flex flex-row">

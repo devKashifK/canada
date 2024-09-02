@@ -18,7 +18,7 @@ export default function StartUpVisa() {
           "The Start-Up Visa (SUV) program in Canada offers several benefits to entrepreneurs and innovative start-ups looking to establish themselves in Canada with key benefits"
         }
       />
-      <div className="flex gap-6 ">
+      <div className="flex gap-6 md:flex-row flex-col">
         <HoverCard
           title={"DIRECT PATH TO PERMANENT RESIDENCE (PR CanADA)"}
           color="bg-yellow-400"
@@ -117,7 +117,7 @@ export default function StartUpVisa() {
       <div>
         <FeatureSection title="SUV ROADMAP" subtitle="RoadMap">
           {features.map((item, index) => (
-            <div className="max-w-md sm:mx-auto sm:text-center">
+            <div className="max-w-md sm:mx-auto sm:text-center flex flex-col justify-center items-center">
               <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
                 {item.icon}
               </div>

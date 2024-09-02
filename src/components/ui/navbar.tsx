@@ -524,7 +524,7 @@ export const mobileConfig = [
       {
         provider: "internal",
         name: "TEER Categories & NOC Codes",
-        path: "/work-and-jobs/teer-noc",
+        path: "/work-and-jobs/teer-categories-and-noc",
       },
     ],
   },
@@ -561,48 +561,38 @@ export const mobileConfig = [
       {
         provider: "internal",
         name: "Family Sponsorship",
-        path: "/sponsorship-programs/family-sponsorship",
-      },
-      {
-        provider: "internal",
-        name: "Parental Sponsorship",
-        path: "/sponsorship-programs/parental-sponsorship",
-      },
-      {
-        provider: "internal",
-        name: "Spousal Sponsorship",
-        path: "/sponsorship-programs/spousal-sponsorship",
+        path: "/family-sponsorship",
       },
     ],
   },
+  // {
+  //   name: "Residency And Citizenship",
+  //   icon: "mdi:school-outline",
+  //   heading: "font-semibold text-indigo-800",
+  //   pointer: "bg-indigo-700",
+  //   active: "bg-indigo-300 border-indigo-600 text-indigo-800",
+  //   activeIcon: "text-indigo-800",
+  //   iconBg: "bg-indigo-700",
+  //   apis: [
+  //     {
+  //       provider: "internal",
+  //       name: "Citizenship",
+  //       path: "/residency-and-citizenship/citizenship",
+  //     },
+  //     {
+  //       provider: "internal",
+  //       name: "Permanent Residency",
+  //       path: "/residency-and-citizenship/permanent-residency",
+  //     },
+  //     {
+  //       provider: "internal",
+  //       name: "Residency Obligations",
+  //       path: "/residency-and-citizenship/residency-obligations",
+  //     },
+  //   ],
+  // },
   {
-    name: "Residency And Citizenship",
-    icon: "mdi:school-outline",
-    heading: "font-semibold text-indigo-800",
-    pointer: "bg-indigo-700",
-    active: "bg-indigo-300 border-indigo-600 text-indigo-800",
-    activeIcon: "text-indigo-800",
-    iconBg: "bg-indigo-700",
-    apis: [
-      {
-        provider: "internal",
-        name: "Citizenship",
-        path: "/residency-and-citizenship/citizenship",
-      },
-      {
-        provider: "internal",
-        name: "Permanent Residency",
-        path: "/residency-and-citizenship/permanent-residency",
-      },
-      {
-        provider: "internal",
-        name: "Residency Obligations",
-        path: "/residency-and-citizenship/residency-obligations",
-      },
-    ],
-  },
-  {
-    name: "Privacy Policy",
+    name: "Price Policy",
     icon: "mdi:shield-lock-outline",
     heading: "font-semibold text-gray-800",
     pointer: "bg-gray-700",
@@ -612,27 +602,27 @@ export const mobileConfig = [
     apis: [
       {
         provider: "internal",
-        name: "Privacy Policy",
-        path: "/privacy-policy",
+        name: "Price Policy",
+        path: "/price",
       },
     ],
   },
-  {
-    name: "Terms & Conditions",
-    icon: "mdi:file-document-outline",
-    heading: "font-semibold text-gray-800",
-    pointer: "bg-gray-700",
-    active: "bg-gray-300 border-gray-600 text-gray-800",
-    activeIcon: "text-gray-800",
-    iconBg: "bg-gray-700",
-    apis: [
-      {
-        provider: "internal",
-        name: "Terms & Conditions",
-        path: "/terms-and-conditions",
-      },
-    ],
-  },
+  // {
+  //   name: "Terms & Conditions",
+  //   icon: "mdi:file-document-outline",
+  //   heading: "font-semibold text-gray-800",
+  //   pointer: "bg-gray-700",
+  //   active: "bg-gray-300 border-gray-600 text-gray-800",
+  //   activeIcon: "text-gray-800",
+  //   iconBg: "bg-gray-700",
+  //   apis: [
+  //     {
+  //       provider: "internal",
+  //       name: "Terms & Conditions",
+  //       path: "/terms-and-conditions",
+  //     },
+  //   ],
+  // },
 ];
 
 const router = [

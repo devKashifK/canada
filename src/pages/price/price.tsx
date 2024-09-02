@@ -10,7 +10,7 @@ import React from "react";
 
 export default function Price() {
   return (
-    <Container className="flex flex-col gap-20 py-10">
+    <Container effect="none" className="flex flex-col gap-20 py-10">
       <MovingCardBorder className="rounded-2xl shadow-2xl flex flex-col justify-center items-center gap-6">
         <h3 className="tracking-widest text-4xl text-highlight">
           SPECIAL DISCOUNT OF THE MONTH
@@ -34,7 +34,7 @@ export default function Price() {
           <h2 className="text-4xl text-highlight  tracking-widest">
             {item.title}
           </h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid  grid-cols-1  md:grid-cols-3 gap-4">
             {item.child.map((child, index) =>
               index % 2 === 0 ? (
                 <PriceCardGradient

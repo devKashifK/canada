@@ -39,7 +39,7 @@ export default function InDemandJobs() {
                 Please contact us to submit your application and arrange for
                 interviews
               </p>
-              <div className="grid grid-cols-3 gap-4   h-max justify-center items-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4   h-max justify-center items-center">
                 {data.map((item, index) => (
                   <CardDemo>
                     <div className="flex flex-col gap-0 w-full px-6 relative z-10">
