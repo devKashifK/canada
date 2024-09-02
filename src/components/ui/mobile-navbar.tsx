@@ -1,6 +1,6 @@
 import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "./sheet";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import {
   Collapsible,
@@ -23,7 +23,7 @@ export default function MobileNavbar({ isOpen, setIsOpen, config }) {
       </SheetTrigger>
       <SheetContent
         position="right"
-        className="w-max h-full overflow-y-scroll flex flex-col gap-6 pretty-scroll bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 border-none"
+        className="w-max h-full overflow-y-scroll flex flex-col gap-6 pretty-scroll bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 border-none justify-start items-center"
       >
         <Link
           to={"/"}
@@ -34,15 +34,16 @@ export default function MobileNavbar({ isOpen, setIsOpen, config }) {
           </div>
         </Link>
         {config.map((group, index) => {
-          return <SideBar group={group} key={index} />;
+          return <SideBar group={group} setIsOpen={setIsOpen} key={index} />;
         })}
       </SheetContent>
     </Sheet>
   );
 }
 
-export const SideBar = ({ group }) => {
+export const SideBar = ({ group, setIsOpen }) => {
   const activeId = useLocation();
+  const navigate = useNavigate();
   return (
     <Collapsible
       defaultOpen
@@ -70,7 +71,10 @@ export const SideBar = ({ group }) => {
                   `/${activeId}` === item.path ? group.active : "text-white"
                 )}
               >
-                <Link
+                <button
+                  onClick={() => {
+                    navigate(item.path), setIsOpen(false);
+                  }}
                   key={index}
                   to={`${item.path}`}
                   className={cn(
@@ -96,7 +100,7 @@ export const SideBar = ({ group }) => {
                   ></span>
 
                   {item.name}
-                </Link>
+                </button>
               </div>
             </>
           ))}

@@ -25,7 +25,7 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      <div className="w-[97%] mx-auto h-[500px] shadow-2xl rounded-2xl flex justify-start items-start flex-col overflow-hidden relative">
+      <div className="w-[97%] mx-auto  h-[600px] md:h-[500px] shadow-2xl rounded-2xl flex justify-start items-start flex-col overflow-hidden relative">
         {/* Current Image */}
         <div
           className={`absolute top-0 left-0 w-full h-full transition-transform duration-500 ease-in-out ${

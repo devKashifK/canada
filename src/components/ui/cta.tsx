@@ -63,8 +63,8 @@ export default function CTA() {
           subtitle={"WHAT ARE YOU LOOKING FOR?"}
           cta={"All Solutions"}
         />
-        <div className="flex gap-4 min-h-screen w-[90%] mx-auto py-20 md:py-0">
-          <div className="w-full items-center justify-center flex flex-col space-y-32">
+        <div className="flex gap-4 min-h-screen h-max w-[90%] mx-auto pt-96 md:py-0">
+          <div className="w-full items-center justify-center flex flex-col space-y-96">
             {CtaDetails.slice(0, CtaDetails.length - 1).map((item, index) => (
               <CtaCard2 item={item} key={item.id} flip={true} />
             ))}
@@ -109,23 +109,23 @@ export const CtaCard2 = ({ item, flip }) => {
   return (
     <div
       className={cn(
-        "w-full md:w-[520px] h-[220px] flex items-center relative ",
+        "w-full md:w-[520px] h-[220px] flex md:flex-row flex-col items-center relative ",
         flip ? "justify-end" : "justify-start"
       )}
     >
-      <div className="w-[45%] rounded-l-2xl">
+      <div className="w-full md:w-[45%] rounded-l-2xl">
         <img
           src={item.image}
           alt=""
           className={cn(
-            "h-[330px] md:h-[220px] bg-cover z-10 relative",
-            flip ? "rounded-r-2xl" : "rounded-l-2xl"
+            "h-[330px] w-full rounded-t-2xl md:h-[220px] bg-cover z-10 relative",
+            flip ? "md:rounded-r-2xl" : "md:rounded-l-2xl"
           )}
         />
       </div>
       <div
         className={cn(
-          "px-8 w-[60%] md:w-[330px] h-[330px] md:h-[236px] absolute rounded-2xl -ml-6 shadow-2xl  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
+          "px-8 w-full md:w-[330px] h-[330px] md:h-[236px] relative md:absolute rounded-b-2xl md:rounded-2xl -ml-6 shadow-2xl  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
           flip ? "left-2" : "-right-[40%] md:-right-6"
         )}
       >
