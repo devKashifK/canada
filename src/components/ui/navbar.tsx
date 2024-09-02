@@ -607,22 +607,22 @@ export const mobileConfig = [
       },
     ],
   },
-  // {
-  //   name: "Terms & Conditions",
-  //   icon: "mdi:file-document-outline",
-  //   heading: "font-semibold text-gray-800",
-  //   pointer: "bg-gray-700",
-  //   active: "bg-gray-300 border-gray-600 text-gray-800",
-  //   activeIcon: "text-gray-800",
-  //   iconBg: "bg-gray-700",
-  //   apis: [
-  //     {
-  //       provider: "internal",
-  //       name: "Terms & Conditions",
-  //       path: "/terms-and-conditions",
-  //     },
-  //   ],
-  // },
+  {
+    name: "News",
+    icon: "mdi:file-document-outline",
+    heading: "font-semibold text-gray-800",
+    pointer: "bg-gray-700",
+    active: "bg-gray-300 border-gray-600 text-gray-800",
+    activeIcon: "text-gray-800",
+    iconBg: "bg-gray-700",
+    apis: [
+      {
+        provider: "internal",
+        name: "News",
+        path: "/news",
+      },
+    ],
+  },
 ];
 
 const router = [
