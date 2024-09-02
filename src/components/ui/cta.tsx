@@ -9,48 +9,73 @@ import Glass from "@/lib/helpers";
 
 export default function CTA() {
   return (
-    <Container effect="slide-left">
-      <Title
-        title={
-          <p className="text-5xl text-black/50 w-full text-left">
-            Comprehensive solutions for <br /> all your needs!
-          </p>
-        }
-        to={""}
-        subtitle={"WHAT ARE YOU LOOKING FOR?"}
-        cta={"All Solutions"}
-      />
-      <div className="flex gap-4 min-h-screen w-[80%] mx-auto">
-        <div className="flex-1 items-center flex justify-start">
-          <CtaCard item={CtaDetails[0]} />
-        </div>
-        <div className="flex-1 items-center justify-center flex flex-col gap-12">
-          {CtaDetails.slice(3, CtaDetails.length - 1).map((item, index) =>
-            index === 0 ? (
-              <CtaCard2 item={item} key={item.id} flip={false} />
-            ) : (
-              <CtaCard2 item={item} key={item.id} flip={true} />
-            )
-          )}
-        </div>
-      </div>
-
-      <div className="flex gap-4 min-h-screen w-[80%] mx-auto">
-        <div className="flex-1 items-center justify-center flex flex-col gap-12">
-          {CtaDetails.slice(1, 3).map((item, index) =>
-            index === 0 ? (
-              <CtaCard2 item={item} key={item.id} flip={false} />
-            ) : (
-              <CtaCard2 item={item} key={item.id} flip={true} />
-            )
-          )}
+    <>
+      <Container effect="slide-left" className="hidden md:flex">
+        <Title
+          title={
+            <p className="text-5xl text-black/50 w-full text-left">
+              Comprehensive solutions for <br /> all your needs!
+            </p>
+          }
+          to={""}
+          subtitle={"WHAT ARE YOU LOOKING FOR?"}
+          cta={"All Solutions"}
+        />
+        <div className="flex gap-4 min-h-screen w-[80%] mx-auto">
+          <div className="flex-1 items-center flex justify-start">
+            <CtaCard item={CtaDetails[0]} />
+          </div>
+          <div className="flex-1 items-center justify-center flex flex-col gap-12">
+            {CtaDetails.slice(3, CtaDetails.length - 1).map((item, index) =>
+              index === 0 ? (
+                <CtaCard2 item={item} key={item.id} flip={false} />
+              ) : (
+                <CtaCard2 item={item} key={item.id} flip={true} />
+              )
+            )}
+          </div>
         </div>
 
-        <div className="flex-1 items-center flex justify-end">
-          <CtaCard item={CtaDetails[5]} />
+        <div className="flex gap-4 min-h-screen w-[80%] mx-auto">
+          <div className="flex-1 items-center justify-center flex flex-col gap-12">
+            {CtaDetails.slice(1, 3).map((item, index) =>
+              index === 0 ? (
+                <CtaCard2 item={item} key={item.id} flip={false} />
+              ) : (
+                <CtaCard2 item={item} key={item.id} flip={true} />
+              )
+            )}
+          </div>
+
+          <div className="flex-1 items-center flex justify-end">
+            <CtaCard item={CtaDetails[5]} />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+      <Container effect="slide-left" className="flex md:hidden">
+        <Title
+          title={
+            <p className="text-5xl text-black/50 w-full text-left">
+              Comprehensive solutions for <br /> all your needs!
+            </p>
+          }
+          to={""}
+          subtitle={"WHAT ARE YOU LOOKING FOR?"}
+          cta={"All Solutions"}
+        />
+        <div className="flex gap-4 min-h-screen w-[90%] mx-auto">
+          <div className="w-full items-center justify-center flex flex-col gap-12">
+            {CtaDetails.slice(0, CtaDetails.length - 1).map((item, index) =>
+              index === 0 ? (
+                <CtaCard2 item={item} key={item.id} flip={false} />
+              ) : (
+                <CtaCard2 item={item} key={item.id} flip={true} />
+              )
+            )}
+          </div>
+        </div>
+      </Container>
+    </>
   );
 }
 
@@ -88,7 +113,7 @@ export const CtaCard2 = ({ item, flip }) => {
   return (
     <div
       className={cn(
-        "w-[520px] h-[220px] flex items-center relative ",
+        "w-[300px] md:w-[520px] h-[220px] flex items-center relative ",
         flip ? "justify-end" : "justify-start"
       )}
     >
@@ -104,7 +129,7 @@ export const CtaCard2 = ({ item, flip }) => {
       </div>
       <div
         className={cn(
-          "px-8 w-[330px] h-[236px] absolute rounded-2xl -ml-6 shadow-2xl  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
+          "px-8 w-[200px] md:w-[330px] h-[300px] md:h-[236px] absolute rounded-2xl -ml-6 shadow-2xl  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
           flip ? "left-2" : "-right-6"
         )}
       >

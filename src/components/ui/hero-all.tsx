@@ -16,10 +16,10 @@ export default function HeroDefault({
       className="flex flex-col gap-2 mx-auto rounded-2xl bg-center relative bg-cover w-[97%] h-[85vh]"
       style={{ backgroundImage: `url(${img})` }}
     >
-      <div className="bg-black bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl h-full absolute top-0 left-0 w-full"></div>
-      <div className="relative z-10 rounded-2xl">
+      <div className="bg-black bg-clip-padding  backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl h-full absolute top-0 left-0 w-full"></div>
+      <div className="relative z-10">
         <Navbar defaultStyle={true} />
-        <div className="flex justify-center items-center w-full h-full mt-10">
+        <div className="flex justify-center items-center w-full h-full mt-10 ">
           <div
             className="text-6xl font-primary tracking-widest text-white"
             dangerouslySetInnerHTML={{ __html: text }}

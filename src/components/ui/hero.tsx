@@ -52,17 +52,17 @@ export default function Hero() {
 
         <div className="absolute top-0 left-0 w-full h-full bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 rounded-xl"></div>
 
-        <div className="flex flex-col w-full h-full relative z-10">
+        <div className="flex flex-col w-full h-full relative z-[10000]">
           <Navbar type={"hero"} />
           <div className="px-20 py-10 flex-1 flex gap-8 flex-col justify-center items-center">
             <div className="flex gap-1 flex-col justify-center items-center w-full relative">
-              <p className="text-4xl text-left text-black/50">
+              <p className="text-4xl text-center text-black/50">
                 Achieve your family Canada
                 <strong className="text-black/70 ml-4">dreams with us</strong>
                 <br />
               </p>
 
-              <div className="absolute right-40 -bottom-8 w-64 h-10">
+              <div className="md:block hidden absolute right-40 -bottom-8 w-64 h-10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="100%"
