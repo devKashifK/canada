@@ -17,7 +17,7 @@ export default function OurService() {
         }
         to=""
       />
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid  grid-cols-1 md:grid-cols-3 gap-8">
         {dummyservices.map((item, index) => (
           <ServicesCard
             id={item.id}

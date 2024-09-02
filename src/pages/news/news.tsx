@@ -25,7 +25,7 @@ export default function News() {
   });
 
   return (
-    <Container className="w-[80%]">
+    <Container effect="none" className="w-[80%]">
       <VerticalTimeline layout={"2-columns"} className="w-full" animate>
         {data &&
           data.map((item, index) => {

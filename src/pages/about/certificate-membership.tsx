@@ -7,12 +7,12 @@ export default function CertificateMembership() {
     <Container className="flex flex-col py-20 gap-20">
       <Title title="Certificate and Membership" />
       <div className="">
-        <div className="h-[75rem] relative p-6 gap-x-16   grid grid-cols-3  items-center justify-center ">
+        <div className="h-max md:h-[75rem] relative p-6 gap-x-16  grid-cols-1  grid md:grid-cols-3  items-center justify-center ">
           {dummyCertificate.map((item, index) => (
             <DirectionAwareHover
               imageUrl={item.url}
               key={item.id}
-              className="p-8 rounded-lg "
+              className="w-full p-8 rounded-lg "
             >
               <p className="font-bold text-xl">{item.title}</p>
               {/* <p className="font-normal text-sm"></p> */}

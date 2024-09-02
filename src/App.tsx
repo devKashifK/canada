@@ -28,8 +28,8 @@ function App() {
         >
           <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
 
-          <div className="flex z-10 gap-20 justify-start items-start">
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+          <div className="md:flex-row flex-col flex z-10 gap-20 justify-start items-start">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"mdi:checkbox-marked-outline"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
@@ -46,7 +46,7 @@ function App() {
                 successful visas in 2023
               </span>
             </div>
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"icon-park-outline:message-success"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
@@ -59,7 +59,7 @@ function App() {
                 Success Start Up Visa
               </span>
             </div>
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"cil:happy"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
@@ -73,7 +73,7 @@ function App() {
                 happy clients
               </span>
             </div>
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"game-icons:trophy-cup"}
                 className="text-5xl cursor-pointer rounded-full py-2 px-2"

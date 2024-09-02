@@ -186,8 +186,8 @@ export default function About() {
         >
           <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
 
-          <div className="flex z-10 gap-20 justify-start items-start">
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+          <div className="md:flex-row flex-col flex z-10 gap-20 justify-start items-start">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"mdi:checkbox-marked-outline"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
@@ -204,7 +204,7 @@ export default function About() {
                 successful visas in 2023
               </span>
             </div>
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"icon-park-outline:message-success"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
@@ -217,7 +217,7 @@ export default function About() {
                 Success Start Up Visa
               </span>
             </div>
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"cil:happy"}
                 className="text-5xl cursor-pointer  rounded-full py-2 px-2"
@@ -231,13 +231,13 @@ export default function About() {
                 happy clients
               </span>
             </div>
-            <div className="flex flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
               <Icon
                 icon={"game-icons:trophy-cup"}
                 className="text-5xl cursor-pointer rounded-full py-2 px-2"
               />
               <div className="flex gap-2 flex-col  justify-center items-center">
-                <CountUp enableScrollSpy={true} end={1} className="text-6xl" />
+                <CountUp enableScrollSpy={true} end={3} className="text-6xl" />
               </div>
               <span className="uppercase text-lg font-primary tracking-widest">
                 Consultants
@@ -248,7 +248,7 @@ export default function About() {
       </Container>
       <Container>
         <Glass className="flex flex-col gap-8 px-10 py-10">
-          <div className="flex gap-8">
+          <div className="flex md:flex-row flex-col gap-8">
             <div className="flex-1 flex flex-col gap-2">
               <div className="relative w-max">
                 <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
@@ -302,7 +302,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-4 md:flex-row flex-col">
             <MovingCardBorder
               className="justify-start items-center  flex flex-col gap-2 py-8 w-full flex-1 rounded-2xl text-left bg-center bg-cover cursor-pointer"
               animate={true}

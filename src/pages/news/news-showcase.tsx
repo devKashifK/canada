@@ -16,11 +16,21 @@ export default function NewsShowcase() {
   return (
     <Swiper
       spaceBetween={30}
-      slidesPerView={3}
+      slidesPerView={"auto"}
       autoplay={{ delay: 2500, disableOnInteraction: false }}
       className="flex gap-2 overflow-hidden"
       style={{ width: "100%" }}
       modules={[Autoplay]}
+      // breakpoints={{
+      //   768: {
+      //     slidesPerView: 2,
+      //     spaceBetween: 20,
+      //   },
+      //   1024: {
+      //     slidesPerView: 3,
+      //     spaceBetween: 50,
+      //   },
+      // }}
     >
       {data &&
         data.map((item, index) => {
@@ -33,7 +43,7 @@ export default function NewsShowcase() {
             }
           );
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="w-full md:flex-[350px]">
               <NewsFeedCard
                 title={item.title}
                 subTitle={item.subTitle}

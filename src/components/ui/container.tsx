@@ -88,7 +88,7 @@ export default function Container({
         {children}
       </motion.div>
     );
-  } else {
+  } else if (effect === "none") {
     return (
       <div
         className={cn("flex flex-col gap-4 py-6 w-[90%] mx-auto", className)}

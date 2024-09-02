@@ -55,7 +55,7 @@ export default function CTA() {
       <Container effect="slide-left" className="flex md:hidden">
         <Title
           title={
-            <p className="text-5xl text-black/50 w-full text-left">
+            <p className="text-2xl md:text-5xl  text-black/50 w-full text-left">
               Comprehensive solutions for <br /> all your needs!
             </p>
           }
@@ -63,15 +63,11 @@ export default function CTA() {
           subtitle={"WHAT ARE YOU LOOKING FOR?"}
           cta={"All Solutions"}
         />
-        <div className="flex gap-4 min-h-screen w-[90%] mx-auto">
-          <div className="w-full items-center justify-center flex flex-col gap-12">
-            {CtaDetails.slice(0, CtaDetails.length - 1).map((item, index) =>
-              index === 0 ? (
-                <CtaCard2 item={item} key={item.id} flip={false} />
-              ) : (
-                <CtaCard2 item={item} key={item.id} flip={true} />
-              )
-            )}
+        <div className="flex gap-4 min-h-screen w-[90%] mx-auto py-20 md:py-0">
+          <div className="w-full items-center justify-center flex flex-col space-y-32">
+            {CtaDetails.slice(0, CtaDetails.length - 1).map((item, index) => (
+              <CtaCard2 item={item} key={item.id} flip={true} />
+            ))}
           </div>
         </div>
       </Container>
@@ -113,7 +109,7 @@ export const CtaCard2 = ({ item, flip }) => {
   return (
     <div
       className={cn(
-        "w-[300px] md:w-[520px] h-[220px] flex items-center relative ",
+        "w-full md:w-[520px] h-[220px] flex items-center relative ",
         flip ? "justify-end" : "justify-start"
       )}
     >
@@ -122,23 +118,24 @@ export const CtaCard2 = ({ item, flip }) => {
           src={item.image}
           alt=""
           className={cn(
-            "h-[217px] bg-cover z-10 relative",
+            "h-[330px] md:h-[220px] bg-cover z-10 relative",
             flip ? "rounded-r-2xl" : "rounded-l-2xl"
           )}
         />
       </div>
       <div
         className={cn(
-          "px-8 w-[200px] md:w-[330px] h-[300px] md:h-[236px] absolute rounded-2xl -ml-6 shadow-2xl  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
-          flip ? "left-2" : "-right-6"
+          "px-8 w-[60%] md:w-[330px] h-[330px] md:h-[236px] absolute rounded-2xl -ml-6 shadow-2xl  z-20 border-gray-100 backdrop-blur-3xl bg-opacity-10 bg-clip-padding backdrop-filter bg-gray-100 flex flex-col gap-2 py-5",
+          flip ? "left-2" : "-right-[40%] md:-right-6"
         )}
       >
-        <div className="flex flex-col gap-0">
+        <div className="flex flex-col justify-center r gap-0">
           <h5 className="text-4xl text-left text-highlight">{item.title}</h5>
           {/* <p className="text-sm text-left text-black/70">
             {truncateTextHeading(item.subtitle)}
           </p> */}
         </div>
+
         <p className="text-xs text-left text-black/80">
           {truncateText(item.description)}...{" "}
           <span className="text-black">Read More</span>
@@ -252,7 +249,7 @@ export const CTADefault = ({
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
-        <div className="flex flex-col gap-3 relative z-10">
+        <div className="flex flex-col gap-8 md:gap-3 relative z-10">
           <h4 className="text-4xl tracking-wider text-center text-white">
             {title}
           </h4>

@@ -29,7 +29,7 @@ export default function Title({
         <h4 className="text-highlight text-2xl">{subtitle}</h4>
         <div className="flex flex-col gap-3 w-full">
           {typeof title === "string" ? (
-            <h2 className="text-4xl tracking-wider text-black/50 w-full text-left">
+            <h2 className="text-2xl md:text-4xl tracking-wider text-black/50 w-full text-left">
               {title}
             </h2>
           ) : (

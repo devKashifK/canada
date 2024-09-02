@@ -86,7 +86,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 border-gray-100 rounded-2xl px-8 py-6 md:w-[450px] flex-col gap-4"
+            className="w-[350px] max-w-full relative bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-10 border-gray-100 rounded-2xl px-8 py-6 md:w-[450px] h flex-col gap-4"
             // style={{
             //   background:
             //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
@@ -98,7 +98,7 @@ export const InfiniteMovingCards = ({
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm leading-[1.6] text-black font-normal block h-[120px] italic">
+              <span className="relative z-20 text-sm leading-[1.6] text-black font-normal block h-[200px] md:h-[120px] italic">
                 {item.quote}
               </span>
               <div className="flex gap-2 justify-start mt-6 items-center">
