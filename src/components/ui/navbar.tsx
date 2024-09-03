@@ -34,7 +34,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
         )}
       >
         <div className="h-full flex justify-center items-center px-8">
-          <img src="/gt-removebg.png" alt="" className="" />
+          <img src="/gtr-white.png" alt="" className="w-72" />
         </div>
         <div className="flex flex-col w-full justify-start items-start h-24">
           <div className="w-full flex gap-10 py-2 justify-end items-center px-6">
